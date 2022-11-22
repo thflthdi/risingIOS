@@ -12,14 +12,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var KRHorizScrollView: UIScrollView!
     
-    @IBOutlet weak var bannerView: UIView!
-    
-    @IBOutlet weak var descriptionView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         MainVerticalScrollView.showsVerticalScrollIndicator = false
         KRHorizScrollView.showsHorizontalScrollIndicator = false
-//        descriptionView.setGradient(color1: UIColor.lightGray, color2: .black)
     }
     
 
