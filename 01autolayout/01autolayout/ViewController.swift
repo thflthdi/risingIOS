@@ -12,10 +12,24 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var KRHorizScrollView: UIScrollView!
     
+    @IBOutlet weak var WatchingHorizScrollView: UIScrollView!
+    
+    @IBOutlet weak var NgameHorizScrollView: UIScrollView!
+    
+    @IBOutlet weak var OnlyNHorizScrollView: UIScrollView!
+    
+    @IBOutlet weak var MyHorizScrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //스크롤바 숨김
         MainVerticalScrollView.showsVerticalScrollIndicator = false
         KRHorizScrollView.showsHorizontalScrollIndicator = false
+        WatchingHorizScrollView.showsHorizontalScrollIndicator = false
+        NgameHorizScrollView.showsHorizontalScrollIndicator = false
+        OnlyNHorizScrollView.showsHorizontalScrollIndicator = false
+        MyHorizScrollView.showsHorizontalScrollIndicator = false
     }
     
 
