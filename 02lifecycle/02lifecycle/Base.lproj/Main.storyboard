@@ -24,18 +24,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6WM-dj-gdl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1240" y="-1117"/>
+            <point key="canvasLocation" x="-1391" y="-718"/>
         </scene>
         <!--홈-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_2lifecycle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainVC" id="BYZ-38-t0r" customClass="ViewController" customModule="_2lifecycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7M6-5X-0C3">
-                                <rect key="frame" x="-4" y="59" width="415" height="44"/>
+                                <rect key="frame" x="-7" y="59" width="412" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nkE-pR-lYD">
@@ -255,7 +255,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9Ag-UZ-fpx">
                                                                 <rect key="frame" x="0.0" y="0.0" width="500" height="130"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="knm-Kf-0cQ">
+                                                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="knm-Kf-0cQ">
                                                                         <rect key="frame" x="0.0" y="0.0" width="117.5" height="130"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger1" translatesAutoresizingMaskIntoConstraints="NO" id="6wF-LW-dex">
@@ -275,7 +275,7 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTn-Z1-6iP">
+                                                                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTn-Z1-6iP">
                                                                         <rect key="frame" x="127.5" y="0.0" width="117.5" height="130"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger2" translatesAutoresizingMaskIntoConstraints="NO" id="H52-dY-tZb">
@@ -295,7 +295,7 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B6k-XM-88H">
+                                                                    <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B6k-XM-88H">
                                                                         <rect key="frame" x="255" y="0.0" width="117.5" height="130"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger3" translatesAutoresizingMaskIntoConstraints="NO" id="Cpe-6W-yzj">
@@ -315,7 +315,7 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywQ-t0-Jye">
+                                                                    <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywQ-t0-Jye">
                                                                         <rect key="frame" x="382.5" y="0.0" width="117.5" height="130"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger4" translatesAutoresizingMaskIntoConstraints="NO" id="Pmd-xc-9wt">
@@ -429,11 +429,100 @@
                         <outlet property="deliveryUIV" destination="v5O-Qp-dNd" id="oor-Vo-zCI"/>
                         <outlet property="kingorderUIV" destination="Ach-2d-E4j" id="Y1l-yo-Lxn"/>
                         <outlet property="membershipUIV" destination="xBo-wz-YQK" id="wuB-Us-HlP"/>
+                        <outletCollection property="newBurgerStackView" destination="knm-Kf-0cQ" collectionClass="NSMutableArray" id="TFf-hr-SjB"/>
+                        <outletCollection property="newBurgerStackView" destination="aTn-Z1-6iP" collectionClass="NSMutableArray" id="ADJ-dj-UJT"/>
+                        <outletCollection property="newBurgerStackView" destination="B6k-XM-88H" collectionClass="NSMutableArray" id="ITa-Cp-cUL"/>
+                        <outletCollection property="newBurgerStackView" destination="ywQ-t0-Jye" collectionClass="NSMutableArray" id="pfC-U9-aty"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-202.89855072463769" y="-1055.3571428571429"/>
+            <point key="canvasLocation" x="-594.20289855072474" y="-719.19642857142856"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="pft-nQ-QAW">
+            <objects>
+                <viewController storyboardIdentifier="detailVC" id="kLf-wP-T0K" customClass="DetailViewController" customModule="_2lifecycle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y5d-9h-3j9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BW2-nw-S2G">
+                                <rect key="frame" x="16" y="64" width="382" height="391"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLK-gG-z5G">
+                                <rect key="frame" x="16" y="471" width="80.5" height="35"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                <color key="textColor" red="0.3169793487" green="0.1368014514" blue="0.077790267770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="단품" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRP-Pb-ING">
+                                <rect key="frame" x="16" y="522" width="26" height="17"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
+                                <color key="textColor" red="0.3169793487" green="0.1368014514" blue="0.077790267770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xE1-d6-M5e">
+                                <rect key="frame" x="16" y="555" width="382" height="23.5"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
+                                <color key="textColor" red="0.3169793487" green="0.1368014514" blue="0.077790267770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbX-Ir-Tuo">
+                                <rect key="frame" x="16" y="594.5" width="382" height="43"/>
+                                <color key="backgroundColor" red="0.84478145839999996" green="0.1421671212" blue="0.021818330510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.84478145839999996" green="0.1421671212" blue="0.021818330510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="킹오더 주문">
+                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.84478145839999996" green="0.1421671212" blue="0.021818330510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newIcon" translatesAutoresizingMaskIntoConstraints="NO" id="IS2-2x-0vQ">
+                                <rect key="frame" x="16" y="64" width="79" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="O9q-0m-DM8"/>
+                                    <constraint firstAttribute="width" constant="79" id="geR-26-r3L"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Wp8-lY-d4W"/>
+                        <color key="backgroundColor" red="0.95793229339999997" green="0.92240196470000002" blue="0.86384516950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pRP-Pb-ING" firstAttribute="leading" secondItem="Wp8-lY-d4W" secondAttribute="leading" constant="16" id="0oe-hN-a4F"/>
+                            <constraint firstItem="sbX-Ir-Tuo" firstAttribute="top" secondItem="xE1-d6-M5e" secondAttribute="bottom" constant="16" id="2GX-6Q-Na8"/>
+                            <constraint firstItem="sbX-Ir-Tuo" firstAttribute="leading" secondItem="Wp8-lY-d4W" secondAttribute="leading" constant="16" id="3RR-DP-1Eo"/>
+                            <constraint firstItem="Wp8-lY-d4W" firstAttribute="trailing" secondItem="xE1-d6-M5e" secondAttribute="trailing" constant="16" id="H90-ei-ftn"/>
+                            <constraint firstItem="Wp8-lY-d4W" firstAttribute="centerY" secondItem="BW2-nw-S2G" secondAttribute="bottom" id="JEF-5H-Yxi"/>
+                            <constraint firstItem="xE1-d6-M5e" firstAttribute="leading" secondItem="Wp8-lY-d4W" secondAttribute="leading" constant="16" id="KZQ-RY-qb6"/>
+                            <constraint firstItem="xE1-d6-M5e" firstAttribute="top" secondItem="pRP-Pb-ING" secondAttribute="bottom" constant="16" id="NvZ-PB-LQM"/>
+                            <constraint firstItem="Wp8-lY-d4W" firstAttribute="trailing" secondItem="BW2-nw-S2G" secondAttribute="trailing" constant="16" id="U9B-2k-BW0"/>
+                            <constraint firstItem="Wp8-lY-d4W" firstAttribute="trailing" secondItem="sbX-Ir-Tuo" secondAttribute="trailing" constant="16" id="VlB-2h-o9B"/>
+                            <constraint firstItem="IS2-2x-0vQ" firstAttribute="leading" secondItem="Wp8-lY-d4W" secondAttribute="leading" constant="16" id="acY-k5-UbE"/>
+                            <constraint firstItem="VLK-gG-z5G" firstAttribute="top" secondItem="BW2-nw-S2G" secondAttribute="bottom" constant="16" id="boW-t7-dM2"/>
+                            <constraint firstItem="VLK-gG-z5G" firstAttribute="leading" secondItem="Wp8-lY-d4W" secondAttribute="leading" constant="16" id="hte-8F-5yE"/>
+                            <constraint firstItem="IS2-2x-0vQ" firstAttribute="top" secondItem="Wp8-lY-d4W" secondAttribute="top" constant="16" id="ieA-ke-IuP"/>
+                            <constraint firstItem="BW2-nw-S2G" firstAttribute="top" secondItem="Wp8-lY-d4W" secondAttribute="top" constant="16" id="jxu-9W-ero"/>
+                            <constraint firstItem="pRP-Pb-ING" firstAttribute="top" secondItem="VLK-gG-z5G" secondAttribute="bottom" constant="16" id="pRO-rE-Xks"/>
+                            <constraint firstItem="BW2-nw-S2G" firstAttribute="leading" secondItem="Wp8-lY-d4W" secondAttribute="leading" constant="16" id="yAa-Cq-X8c"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="86P-Vr-lBK"/>
+                    <connections>
+                        <outlet property="burgerImageView" destination="BW2-nw-S2G" id="URB-ty-C1s"/>
+                        <outlet property="descriptionUILabel" destination="xE1-d6-M5e" id="V8Y-BJ-RfX"/>
+                        <outlet property="titleUILabel" destination="VLK-gG-z5G" id="SFj-FX-QGt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nrx-hV-2U3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="358" y="-719"/>
         </scene>
         <!--쿠폰-->
         <scene sceneID="Gh3-3s-Buf">
@@ -450,7 +539,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9D-1r-Yu3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-150" y="-310"/>
+            <point key="canvasLocation" x="-651" y="-36"/>
         </scene>
         <!--주문-->
         <scene sceneID="rS1-cw-fmH">
@@ -467,7 +556,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fVm-gb-1Fc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-150" y="435"/>
+            <point key="canvasLocation" x="-1493" y="627"/>
         </scene>
         <!--MY킹-->
         <scene sceneID="VCN-Fw-5gq">
@@ -484,7 +573,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2qs-z6-rYW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="999" y="-668"/>
+            <point key="canvasLocation" x="910" y="-36"/>
         </scene>
         <!--더보기-->
         <scene sceneID="9u1-Yy-QvD">
@@ -501,7 +590,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kP8-WH-xbS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020.2898550724639" y="129.91071428571428"/>
+            <point key="canvasLocation" x="120" y="627"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="paX-vR-C8T">
@@ -524,7 +613,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btJ-I0-r9f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2060" y="-311"/>
+            <point key="canvasLocation" x="-2459" y="-311"/>
         </scene>
         <!--coupon navi-->
         <scene sceneID="QFE-rF-H0u">
@@ -548,7 +637,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gLI-bz-Ack" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1134" y="-385"/>
+            <point key="canvasLocation" x="-1390" y="-36"/>
         </scene>
         <!--order navi-->
         <scene sceneID="8aa-Xz-il7">
@@ -569,7 +658,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AUk-B2-hRj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1175" y="392"/>
+            <point key="canvasLocation" x="-2241" y="627"/>
         </scene>
         <!--myking navi-->
         <scene sceneID="baq-hY-D3j">
@@ -590,7 +679,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8DO-vw-zbq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1883" y="-869"/>
+            <point key="canvasLocation" x="119" y="-36"/>
         </scene>
         <!--more navi-->
         <scene sceneID="x7v-UC-Pll">
@@ -614,7 +703,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AO6-1g-eJi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1882" y="-13"/>
+            <point key="canvasLocation" x="-652" y="627"/>
         </scene>
     </scenes>
     <resources>
@@ -632,6 +721,7 @@
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="icons8-junk-food-64" width="25" height="25"/>
         <image name="logo" width="40" height="40"/>
+        <image name="newIcon" width="126" height="65"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
