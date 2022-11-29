@@ -7,35 +7,12 @@
 
 import UIKit
 
-struct burgerInfo {
-    var index: Int
-    var name: String
-    var count: Int
-    var price: Int
-    var description: String
-    var isChecked: Bool
-    var imageAdd: UIImage
-}
-
-protocol DetailViewControllerDelegate: AnyObject {
-    func passData(_ info: burgerInfo)
-}
-
 class ViewController: UIViewController {
-    
-    weak var delegate: DetailViewControllerDelegate?
     
     var curruntPage: Int = 0
     let dataArray: Array<UIImage> = [UIImage(named: "banner1.png")!, UIImage(named: "banner2.png")!, UIImage(named: "banner3.png")!, UIImage(named: "banner4.png")!, UIImage(named: "banner5.png")!, UIImage(named: "banner6.png")!]
     
-    var menuTag: Int = 0
-    let menuArray: Array<burgerInfo> = [
-        burgerInfo(index:1, name:"비프불고기버거", count: 0, price: 4800, description: "달콤판 불고기소스와 100% 순쇠고기 패티의 감칠맛나는 조화, 비프불고기버거!", isChecked: true, imageAdd: UIImage(named: "bulgogi")!),
-        burgerInfo(index:2, name:"골든치즈렐라 X", count: 0, price: 11500, description: "황금빛 치즈가 통째로! 모짜렐라 치즈와 체다 치즈가 만나 풍미 작렬!", isChecked: true, imageAdd: UIImage(named: "x")!),
-        burgerInfo(index:3, name:"골든치즈렐라와퍼", count: 0, price: 10500, description: "황금빛 치즈가 통째로! 모짜렐라 치즈와 체다 치즈가 만나 풍미 작렬!", isChecked: true, imageAdd: UIImage(named: "whopper")!),
-        burgerInfo(index:4, name:"골든치즈렐라치킨버거", count: 0, price: 9500, description: "황금빛 치즈가 통째로! 모짜렐라 치즈와 체다 치즈가 만나 풍미 작렬!", isChecked: true, imageAdd: UIImage(named: "chicken")!)
-    ]
-    
+    var menuTag: Int = 0    
     
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     @IBOutlet weak var membershipUIV: UIView!
@@ -75,6 +52,7 @@ class ViewController: UIViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "basket.fill"), style: .plain, target: nil, action: nil)
         self.navigationItem.rightBarButtonItem?.tintColor = redColor
+        self.navigationItem.rightBarButtonItem?.action
         
         // UIView 탭 제스처 인식
         for view in newBurgerStackView{
@@ -96,7 +74,7 @@ class ViewController: UIViewController {
            }
        }
        // 배너 움직이는 매서드
-       func bannerMove() {
+    func bannerMove() {
            // 현재페이지가 마지막 페이지일 경우
            if curruntPage == dataArray.count-1 {
            // 맨 처음 페이지로 돌아감

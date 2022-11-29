@@ -8,30 +8,30 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
     var menuTag: Int = 0
+    
     @IBOutlet weak var burgerImageView: UIImageView!
-    
     @IBOutlet weak var titleUILabel: UILabel!
-    
     @IBOutlet weak var descriptionUILabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let mainVC = storyboard?.instantiateViewController(withIdentifier: "mainVC") as! ViewController
-//
-//        mainVC.delegate = self
-        let info = mainVC.menuArray[menuTag - 1]
+
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        var info = appDelegate.menuArray[menuTag]
+        
         self.burgerImageView.image = info.imageAdd
         self.titleUILabel.text = info.name
         self.descriptionUILabel.text = info.description
+
     }
     
+    @IBAction func buttonDidTap(_ sender: UIButton) {
+        let cartVC = storyboard?.instantiateViewController(withIdentifier: "cartVC") as! CartViewController
+        cartVC.menuTag = menuTag
+        
+        self.navigationController?.pushViewController(cartVC, animated: true)
+        
+    }
 }
-
-//extension DetailViewController: DetailViewControllerDelegate{
-//    func passData(_ info: burgerInfo) {
-//        print("ok")
-//        self.burgerImageView.image = info.imageAdd
-//        self.titleUILabel.text = info.name
-//        self.descriptionUILabel.text = info.description
-//    }
-//}

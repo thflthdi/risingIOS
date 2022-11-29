@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		682EA2E129352B940050A2EF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682EA2E029352B940050A2EF /* DetailViewController.swift */; };
+		682EA2E32936012D0050A2EF /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682EA2E22936012D0050A2EF /* CartViewController.swift */; };
 		687526A7293307BC0001376D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687526A6293307BC0001376D /* AppDelegate.swift */; };
 		687526A9293307BC0001376D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687526A8293307BC0001376D /* SceneDelegate.swift */; };
 		687526AB293307BC0001376D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687526AA293307BC0001376D /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		682EA2E029352B940050A2EF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		682EA2E22936012D0050A2EF /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		687526A3293307BC0001376D /* 02lifecycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 02lifecycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		687526A6293307BC0001376D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		687526A8293307BC0001376D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				687526BA293329630001376D /* UITabBarViewController.swift */,
 				68AC9727293394B700EBFCB4 /* CollectionViewCell.swift */,
 				682EA2E029352B940050A2EF /* DetailViewController.swift */,
+				682EA2E22936012D0050A2EF /* CartViewController.swift */,
 			);
 			path = 02lifecycle;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			files = (
 				68AC9728293394B700EBFCB4 /* CollectionViewCell.swift in Sources */,
 				687526BB293329630001376D /* UITabBarViewController.swift in Sources */,
+				682EA2E32936012D0050A2EF /* CartViewController.swift in Sources */,
 				687526AB293307BC0001376D /* ViewController.swift in Sources */,
 				682EA2E129352B940050A2EF /* DetailViewController.swift in Sources */,
 				687526A7293307BC0001376D /* AppDelegate.swift in Sources */,
