@@ -26,6 +26,62 @@
             </objects>
             <point key="canvasLocation" x="-1391" y="-718"/>
         </scene>
+        <!--Popup View Controller-->
+        <scene sceneID="IL4-nD-jFg">
+            <objects>
+                <viewController storyboardIdentifier="popupVC" id="7pO-r5-5J5" customClass="PopupViewController" customModule="_2lifecycle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VJp-zD-dpj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAy-ll-OfN">
+                                <rect key="frame" x="25" y="211" width="364" height="488"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner2" translatesAutoresizingMaskIntoConstraints="NO" id="ARk-rr-Ui3">
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="488"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPu-Hu-L1Z">
+                                        <rect key="frame" x="313" y="0.0" width="51" height="34"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="xmark.circle" catalog="system">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.080467763573232376" green="0.080467763573232376" blue="0.080467763573232376" alpha="0.38044243616773593" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </backgroundConfiguration>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large" weight="heavy"/>
+                                            <color key="baseForegroundColor" red="0.95793229339999997" green="0.92240196470000002" blue="0.86384516950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="closeButtonDidTap:" destination="7pO-r5-5J5" eventType="touchUpInside" id="7o3-ua-7kD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95793229339999997" green="0.92240196470000002" blue="0.86384516950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ARk-rr-Ui3" secondAttribute="trailing" id="8xD-eQ-lLK"/>
+                                    <constraint firstItem="ARk-rr-Ui3" firstAttribute="top" secondItem="DAy-ll-OfN" secondAttribute="top" id="A42-sg-yvS"/>
+                                    <constraint firstItem="iPu-Hu-L1Z" firstAttribute="top" secondItem="DAy-ll-OfN" secondAttribute="top" id="SMe-TR-y7D"/>
+                                    <constraint firstAttribute="bottom" secondItem="ARk-rr-Ui3" secondAttribute="bottom" id="V78-7o-czR"/>
+                                    <constraint firstItem="ARk-rr-Ui3" firstAttribute="centerX" secondItem="DAy-ll-OfN" secondAttribute="centerX" id="egG-fu-Ku7"/>
+                                    <constraint firstItem="ARk-rr-Ui3" firstAttribute="leading" secondItem="DAy-ll-OfN" secondAttribute="leading" id="rld-J1-ILJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="iPu-Hu-L1Z" secondAttribute="trailing" id="tQe-6P-Zf2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EfA-OT-cjS"/>
+                        <color key="backgroundColor" red="0.051926121567234862" green="0.051926121567234862" blue="0.051926121567234862" alpha="0.2940778921771523" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DAy-ll-OfN" firstAttribute="centerY" secondItem="EfA-OT-cjS" secondAttribute="centerY" id="BoW-NM-Hux"/>
+                            <constraint firstItem="EfA-OT-cjS" firstAttribute="trailing" secondItem="DAy-ll-OfN" secondAttribute="trailing" constant="25" id="L79-aS-tio"/>
+                            <constraint firstItem="DAy-ll-OfN" firstAttribute="centerX" secondItem="EfA-OT-cjS" secondAttribute="centerX" id="P9D-Ld-Yn6"/>
+                            <constraint firstItem="DAy-ll-OfN" firstAttribute="leading" secondItem="EfA-OT-cjS" secondAttribute="leading" constant="25" id="T3d-vd-bGq"/>
+                            <constraint firstItem="DAy-ll-OfN" firstAttribute="height" secondItem="EfA-OT-cjS" secondAttribute="height" multiplier="0.6" id="iG4-Ld-oXS"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CJQ-Eo-OGQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-594" y="-1378"/>
+        </scene>
         <!--홈-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -35,7 +91,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7M6-5X-0C3">
-                                <rect key="frame" x="-7" y="59" width="410" height="44"/>
+                                <rect key="frame" x="-11" y="59" width="410" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nkE-pR-lYD">
@@ -250,16 +306,16 @@
                                                 <rect key="frame" x="0.0" y="748.5" width="382" height="130"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gVw-kJ-48k">
-                                                        <rect key="frame" x="0.0" y="0.0" width="500" height="228"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="500" height="130"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9Ag-UZ-fpx">
-                                                                <rect key="frame" x="0.0" y="0.0" width="500" height="228"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="500" height="130"/>
                                                                 <subviews>
                                                                     <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="knm-Kf-0cQ">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="228"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="130"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger1" translatesAutoresizingMaskIntoConstraints="NO" id="6wF-LW-dex">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="117.5" height="228"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="117.5" height="130"/>
                                                                                 <color key="backgroundColor" red="0.95793229339999997" green="0.92240196470000002" blue="0.86384516950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             </imageView>
                                                                         </subviews>
@@ -277,10 +333,10 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTn-Z1-6iP">
-                                                                        <rect key="frame" x="127.5" y="0.0" width="117.5" height="228"/>
+                                                                        <rect key="frame" x="127.5" y="0.0" width="117.5" height="130"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger2" translatesAutoresizingMaskIntoConstraints="NO" id="H52-dY-tZb">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="117.5" height="228"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="117.5" height="130"/>
                                                                                 <color key="backgroundColor" red="0.95793229339999997" green="0.92240196470000002" blue="0.86384516950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             </imageView>
                                                                         </subviews>
@@ -298,10 +354,10 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B6k-XM-88H">
-                                                                        <rect key="frame" x="255" y="0.0" width="117.5" height="228"/>
+                                                                        <rect key="frame" x="255" y="0.0" width="117.5" height="130"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger3" translatesAutoresizingMaskIntoConstraints="NO" id="Cpe-6W-yzj">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="117.5" height="228"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="117.5" height="130"/>
                                                                                 <color key="backgroundColor" red="0.95793229339999997" green="0.92240196470000002" blue="0.86384516950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             </imageView>
                                                                         </subviews>
@@ -319,10 +375,10 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywQ-t0-Jye">
-                                                                        <rect key="frame" x="382.5" y="0.0" width="117.5" height="228"/>
+                                                                        <rect key="frame" x="382.5" y="0.0" width="117.5" height="130"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger4" translatesAutoresizingMaskIntoConstraints="NO" id="Pmd-xc-9wt">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="117.5" height="228"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="117.5" height="130"/>
                                                                                 <color key="backgroundColor" red="0.95793229339999997" green="0.92240196470000002" blue="0.86384516950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             </imageView>
                                                                         </subviews>
@@ -433,7 +489,9 @@
                         <outlet property="bannerLabel" destination="deN-Yu-n1r" id="aSB-1Q-TtR"/>
                         <outlet property="barcodeButton" destination="zW2-ce-Hks" id="nSh-7g-p9j"/>
                         <outlet property="deliveryUIV" destination="v5O-Qp-dNd" id="oor-Vo-zCI"/>
+                        <outlet property="itsNewScrollV" destination="EKU-ih-4E9" id="t1X-GU-iRb"/>
                         <outlet property="kingorderUIV" destination="Ach-2d-E4j" id="Y1l-yo-Lxn"/>
+                        <outlet property="mainScrollV" destination="nkE-pR-lYD" id="Tq0-Ov-os5"/>
                         <outlet property="membershipUIV" destination="xBo-wz-YQK" id="wuB-Us-HlP"/>
                         <outletCollection property="newBurgerStackView" destination="knm-Kf-0cQ" collectionClass="NSMutableArray" id="TFf-hr-SjB"/>
                         <outletCollection property="newBurgerStackView" destination="aTn-Z1-6iP" collectionClass="NSMutableArray" id="ADJ-dj-UJT"/>
@@ -617,13 +675,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHc-Dc-JEH" userLabel="nameUILabel">
-                                        <rect key="frame" x="135.5" y="21" width="44.5" height="21"/>
+                                        <rect key="frame" x="135.5" y="21" width="45" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="0.3169793487" green="0.1368014514" blue="0.077790267770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcj-8h-Jmm" userLabel="priceUILabel">
-                                        <rect key="frame" x="135.5" y="65.5" width="44.5" height="21"/>
+                                        <rect key="frame" x="135.5" y="65.5" width="45" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="0.84478145839999996" green="0.1421671212" blue="0.021818330510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -966,6 +1024,7 @@
     </scenes>
     <resources>
         <image name="bag.fill" catalog="system" width="128" height="128"/>
+        <image name="banner2" width="720" height="720"/>
         <image name="barcode" catalog="system" width="128" height="94"/>
         <image name="burger1" width="398" height="444"/>
         <image name="burger2" width="392" height="448"/>
@@ -984,6 +1043,7 @@
         <image name="newIcon" width="126" height="65"/>
         <image name="plus.circle" catalog="system" width="128" height="123"/>
         <image name="trash.fill" catalog="system" width="119" height="128"/>
+        <image name="xmark.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

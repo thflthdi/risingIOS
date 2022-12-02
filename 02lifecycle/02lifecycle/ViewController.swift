@@ -22,6 +22,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var bannerLabel: UILabel!
     @IBOutlet weak var bannerCtnView: UIView!
     
+    @IBOutlet weak var mainScrollV: UIScrollView!
+    @IBOutlet weak var itsNewScrollV: UIScrollView!
+    
     //어떤 UIView를 클릭했는지 알기 위해 리스트로 가져옴
     @IBOutlet var newBurgerStackView: [UIView]!
 
@@ -31,6 +34,16 @@ class ViewController: UIViewController {
         let image = UIImage(named: "logo")
             navigationItem.titleView = UIImageView(image: image)
         let redColor = UIColor(red: 0.84, green: 0.14, blue: 0.02, alpha: 1)
+        
+        //app delegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        var isFirstBoot = appDelegate.isFirstboot
+        
+        if isFirstBoot {
+            print("iFist?\(isFirstBoot)")
+            firstActiveAlert()
+            appDelegate.isFirstboot = false
+        }
         
         membershipUIV.layer.cornerRadius = 10
         kingorderUIV.layer.cornerRadius = 10
@@ -54,6 +67,9 @@ class ViewController: UIViewController {
         self.navigationItem.rightBarButtonItem?.tintColor = redColor
         self.navigationItem.rightBarButtonItem?.action
         
+        self.mainScrollV.showsVerticalScrollIndicator = false
+        self.itsNewScrollV.showsHorizontalScrollIndicator = false
+        
         // UIView 탭 제스처 인식
         for view in newBurgerStackView{
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
@@ -61,19 +77,24 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    
     @objc func handleTap(sender: UITapGestureRecognizer) {
         let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "detailVC") as! DetailViewController
-        detailVC.menuTag = sender.view!.tag
+        detailVC.menuTag = sender.view!.tag - 1
         
         self.navigationController?.pushViewController(detailVC, animated: true)
         }
+    
     
     func bannerTimer() {
            let _: Timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (Timer) in
                self.bannerMove()
            }
        }
-       // 배너 움직이는 매서드
+    
+    
+    // 배너 움직이는 매서드
     func bannerMove() {
            // 현재페이지가 마지막 페이지일 경우
            if curruntPage == dataArray.count-1 {
@@ -88,6 +109,13 @@ class ViewController: UIViewController {
            bannerCollectionView.scrollToItem(at: NSIndexPath(item: curruntPage, section: 0) as IndexPath, at: .right, animated: true)
            bannerLabel.text = "\(curruntPage+1)"
        }
+    
+    //첫 실행 시 alert
+    func firstActiveAlert() {
+        let popupVC = storyboard?.instantiateViewController(withIdentifier: "popupVC") as! PopupViewController
+        popupVC.modalPresentationStyle = .overFullScreen
+        present(popupVC, animated: false)
+    }
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

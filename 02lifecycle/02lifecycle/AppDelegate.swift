@@ -25,9 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         burgerInfo(index:3, name:"골든치즈렐라와퍼", price: 10500, description: "황금빛 치즈가 통째로! 모짜렐라 치즈와 체다 치즈가 만나 풍미 작렬!", isChecked: true, imageAdd: UIImage(named: "whopper")!),
         burgerInfo(index:4, name:"골든치즈렐라치킨버거", price: 9500, description: "황금빛 치즈가 통째로! 모짜렐라 치즈와 체다 치즈가 만나 풍미 작렬!", isChecked: true, imageAdd: UIImage(named: "chicken")!)
     ]
+    
+    var isFirstboot: Bool = false
 
+    //앱이 처음 시작될 때 실행
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        isFirstboot = true
         return true
     }
 
@@ -43,8 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+        
     }
-
 
 }
 
