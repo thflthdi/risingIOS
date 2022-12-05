@@ -4,4 +4,4 @@
 
 ### [1. netflix clone coding](https://github.com/thflthdi/risingIOS/tree/main/01autolayout)
 
-### [2. burgerking clone coding](https://github.com/thflthdi/risingIOS/tree/main/02lifecycle)
+### [2,3. burgerking clone coding](https://github.com/thflthdi/risingIOS/tree/main/02lifecycle)
