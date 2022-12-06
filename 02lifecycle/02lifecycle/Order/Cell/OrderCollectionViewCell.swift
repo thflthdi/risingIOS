@@ -13,5 +13,8 @@ class OrderCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    @IBOutlet weak var categoryNameLabel: UILabel!
+    
+    @IBOutlet weak var categoryUIVIew: UIView!
 }
