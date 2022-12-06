@@ -7,15 +7,6 @@
 
 import UIKit
 
-struct burgerInfo {
-    var index: Int
-    var name: String
-    var price: Int
-    var description: String
-    var isChecked: Bool
-    var imageAdd: UIImage
-}
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var menuCtnArray: [Int] = [0, 0, 0, 0, 0]

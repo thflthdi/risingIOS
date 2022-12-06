@@ -91,7 +91,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7M6-5X-0C3">
-                                <rect key="frame" x="-11" y="59" width="410" height="44"/>
+                                <rect key="frame" x="-13" y="59" width="409" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nkE-pR-lYD">
@@ -856,7 +856,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9D-1r-Yu3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-651" y="-36"/>
+            <point key="canvasLocation" x="-1146" y="-36"/>
         </scene>
         <!--주문-->
         <scene sceneID="rS1-cw-fmH">
@@ -890,7 +890,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2qs-z6-rYW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="910" y="-36"/>
+            <point key="canvasLocation" x="-49" y="-36"/>
         </scene>
         <!--더보기-->
         <scene sceneID="9u1-Yy-QvD">
@@ -922,105 +922,64 @@
                     </tabBar>
                     <connections>
                         <segue destination="6Ex-pn-I0g" kind="relationship" relationship="viewControllers" id="pbG-b5-vmw"/>
-                        <segue destination="ktB-sF-679" kind="relationship" relationship="viewControllers" id="mkA-HT-1wx"/>
-                        <segue destination="LzL-H6-3FV" kind="relationship" relationship="viewControllers" id="1KL-5a-FwQ"/>
-                        <segue destination="rom-UU-a6a" kind="relationship" relationship="viewControllers" id="tsh-em-Yl2"/>
-                        <segue destination="NlC-YH-znf" kind="relationship" relationship="viewControllers" id="ooi-e5-sPd"/>
+                        <segue destination="FTK-zt-MiI" kind="relationship" relationship="viewControllers" id="W50-CJ-QpX"/>
+                        <segue destination="KDv-BY-dm5" kind="relationship" relationship="viewControllers" id="pOp-m4-Hzc"/>
+                        <segue destination="b4r-Id-E0A" kind="relationship" relationship="viewControllers" id="XfC-b4-u4X"/>
+                        <segue destination="Jgx-mN-ubt" kind="relationship" relationship="viewControllers" id="C1R-tG-fe1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btJ-I0-r9f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2459" y="-311"/>
         </scene>
-        <!--coupon navi-->
-        <scene sceneID="QFE-rF-H0u">
+        <!--Order View Controller-->
+        <scene sceneID="sTb-Lr-o7k">
             <objects>
-                <navigationController title="coupon navi" id="ktB-sF-679" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="lfv-dc-Q3h"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="T7f-ZI-qa1">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="28"/>
-                            <color key="textColor" red="0.3169793487" green="0.1368014514" blue="0.077790267770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" red="0.3169793487" green="0.1368014514" blue="0.077790267770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </textAttributes>
-                    </navigationBar>
+                <viewController storyboardIdentifier="orderVC" id="ku4-SN-RgS" customClass="OrderViewController" customModule="_2lifecycle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VZ9-xg-ltm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yVR-mB-1qx">
+                                <rect key="frame" x="0.0" y="64" width="414" height="110"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="lpj-WP-LRn"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pm3-5O-kRD">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sjE-fv-WeK">
+                                <rect key="frame" x="0.0" y="174" width="414" height="688"/>
+                                <color key="backgroundColor" red="0.95793229339999997" green="0.92240196470000002" blue="0.86384516950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.95793229339999997" green="0.92240196470000002" blue="0.86384516950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Yd0-mc-JGf"/>
+                        <color key="backgroundColor" red="0.95793229339999997" green="0.92240196470000002" blue="0.86384516950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Yd0-mc-JGf" firstAttribute="trailing" secondItem="yVR-mB-1qx" secondAttribute="trailing" id="57M-Xq-6rg"/>
+                            <constraint firstItem="sjE-fv-WeK" firstAttribute="leading" secondItem="Yd0-mc-JGf" secondAttribute="leading" id="5FO-WY-HXh"/>
+                            <constraint firstItem="Yd0-mc-JGf" firstAttribute="trailing" secondItem="sjE-fv-WeK" secondAttribute="trailing" id="Wds-xG-jtd"/>
+                            <constraint firstItem="sjE-fv-WeK" firstAttribute="top" secondItem="yVR-mB-1qx" secondAttribute="bottom" id="nRM-l8-Wfu"/>
+                            <constraint firstItem="yVR-mB-1qx" firstAttribute="top" secondItem="Yd0-mc-JGf" secondAttribute="top" constant="16" id="ugn-x5-y8P"/>
+                            <constraint firstItem="yVR-mB-1qx" firstAttribute="leading" secondItem="Yd0-mc-JGf" secondAttribute="leading" id="wQf-T0-w0l"/>
+                            <constraint firstItem="Yd0-mc-JGf" firstAttribute="bottom" secondItem="sjE-fv-WeK" secondAttribute="bottom" id="z0s-B1-gBd"/>
+                        </constraints>
+                    </view>
                     <connections>
-                        <segue destination="FTK-zt-MiI" kind="relationship" relationship="rootViewController" id="U8F-H0-f5G"/>
+                        <outlet property="orderCollectionVew" destination="yVR-mB-1qx" id="YpM-aA-sFy"/>
+                        <outlet property="orderTableView" destination="sjE-fv-WeK" id="g3r-Jc-8fa"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gLI-bz-Ack" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3vv-gS-QR9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1390" y="-36"/>
-        </scene>
-        <!--order navi-->
-        <scene sceneID="8aa-Xz-il7">
-            <objects>
-                <navigationController title="order navi" id="LzL-H6-3FV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="jMt-S0-eQe"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X2a-Kk-J85">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="28"/>
-                            <color key="textColor" red="0.3169793487" green="0.1368014514" blue="0.077790267770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="KDv-BY-dm5" kind="relationship" relationship="rootViewController" id="gMq-fT-tsj"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AUk-B2-hRj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2241" y="627"/>
-        </scene>
-        <!--myking navi-->
-        <scene sceneID="baq-hY-D3j">
-            <objects>
-                <navigationController title="myking navi" id="rom-UU-a6a" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="7ax-IX-vto"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mki-Or-7MO">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="28"/>
-                            <color key="textColor" red="0.3169793487" green="0.1368014514" blue="0.077790267770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="b4r-Id-E0A" kind="relationship" relationship="rootViewController" id="GT5-ZC-Mi7"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8DO-vw-zbq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="119" y="-36"/>
-        </scene>
-        <!--more navi-->
-        <scene sceneID="x7v-UC-Pll">
-            <objects>
-                <navigationController title="more navi" id="NlC-YH-znf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="fjC-zb-d8N"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tQC-Kl-aXf">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="28"/>
-                            <color key="textColor" red="0.3169793487" green="0.1368014514" blue="0.077790267770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" red="0.3169793487" green="0.1368014514" blue="0.077790267770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Jgx-mN-ubt" kind="relationship" relationship="rootViewController" id="LXi-mt-Osx"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AO6-1g-eJi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-652" y="627"/>
+            <point key="canvasLocation" x="-2343" y="542"/>
         </scene>
     </scenes>
     <resources>

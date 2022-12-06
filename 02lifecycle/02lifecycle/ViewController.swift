@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     
     //어떤 UIView를 클릭했는지 알기 위해 리스트로 가져옴
     @IBOutlet var newBurgerStackView: [UIView]!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,9 +75,15 @@ class ViewController: UIViewController {
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
             view.addGestureRecognizer(tapGesture)
         }
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handelTapToOrder(sender:)))
+        deliveryUIV.addGestureRecognizer(tapGesture)
         
     }
     
+    @objc func handelTapToOrder(sender: UITapGestureRecognizer){
+        let orderVC = self.storyboard?.instantiateViewController(withIdentifier: "orderVC") as! OrderViewController
+        self.navigationController?.pushViewController(orderVC, animated: true)
+    }
     
     @objc func handleTap(sender: UITapGestureRecognizer) {
         let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "detailVC") as! DetailViewController
