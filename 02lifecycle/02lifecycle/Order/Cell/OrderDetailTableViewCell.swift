@@ -13,7 +13,13 @@ class OrderDetailTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//
+//        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0))
+//    }
+//    
     @IBOutlet weak var setImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -24,4 +30,9 @@ class OrderDetailTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    public func setupUI(_ cellData: setInfo) {
+        self.setImage.image = cellData.setImage
+        self.nameLabel.text = cellData.setName
+        self.priceLabel.text = String(cellData.setPrice)
+    }
 }

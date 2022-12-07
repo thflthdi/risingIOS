@@ -29,6 +29,7 @@ struct burgerInfo {
     var category: String
 }
 
+
 class MenuModel {
     static let shared = MenuModel()
     private var menuArray: Array<burgerInfo> = [
