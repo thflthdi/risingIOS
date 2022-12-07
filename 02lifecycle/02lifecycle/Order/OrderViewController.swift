@@ -18,6 +18,7 @@ class OrderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        self.title = "딜리버리 메뉴"
     }
     
     private func setupTableView(){

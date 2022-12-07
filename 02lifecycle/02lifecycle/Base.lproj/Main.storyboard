@@ -12,7 +12,7 @@
         <!--home navi-->
         <scene sceneID="KUj-Gn-Niy">
             <objects>
-                <navigationController title="home navi" id="6Ex-pn-I0g" sceneMemberID="viewController">
+                <navigationController title="home navi" id="6Ex-pn-I0g" customClass="MyNavigationViewController" customModule="_2lifecycle" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="RqH-5A-T0Q"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XTL-Qu-h8N">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
@@ -1100,6 +1100,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GMa-Tk-AJI"/>
                         <color key="backgroundColor" red="0.95793229339999997" green="0.92240196470000002" blue="0.86384516950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.3169793487" green="0.1368014514" blue="0.077790267770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="GMa-Tk-AJI" firstAttribute="trailing" secondItem="SQ6-fx-Nfi" secondAttribute="trailing" id="28f-Pw-ZBk"/>
                             <constraint firstItem="SQ6-fx-Nfi" firstAttribute="top" secondItem="GMa-Tk-AJI" secondAttribute="top" id="F7D-ha-XxB"/>

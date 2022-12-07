@@ -33,11 +33,11 @@ class OrderDetailViewController: UIViewController {
         setListTableView.register(UINib(nibName: "OrderDetailTableViewCell", bundle: nil), forCellReuseIdentifier: "OrderDetailTableViewCell")
         
         let menu = menuModel.read(at: cellIndex)
+        self.title = menu.name
         self.menuNameLabel.text = menu.name
         self.menuDescLabel.text = menu.description
         self.menuImage.image = menu.imageAdd
         setGenerator(menu)
-        
     }
     
     func setGenerator(_ info: burgerInfo) {
