@@ -78,6 +78,8 @@ class ViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handelTapToOrder(sender:)))
         deliveryUIV.addGestureRecognizer(tapGesture)
         
+        self.hidesBottomBarWhenPushed = true
+        
     }
     
     @objc func handelTapToOrder(sender: UITapGestureRecognizer){

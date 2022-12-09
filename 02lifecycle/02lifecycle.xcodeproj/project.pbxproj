@@ -32,6 +32,14 @@
 		68C54DDB29411E4700E4BE7A /* SidePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C54DDA29411E4700E4BE7A /* SidePopupViewController.swift */; };
 		68C54DE0294120F600E4BE7A /* SidePopupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C54DDE294120F600E4BE7A /* SidePopupCollectionViewCell.swift */; };
 		68C54DE1294120F700E4BE7A /* SidePopupCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68C54DDF294120F600E4BE7A /* SidePopupCollectionViewCell.xib */; };
+		68C54DE32942106300E4BE7A /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C54DE22942106300E4BE7A /* CartModel.swift */; };
+		68C54DE529421C2800E4BE7A /* IntrinsicTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C54DE429421C2800E4BE7A /* IntrinsicTableView.swift */; };
+		68C54DE929421E2900E4BE7A /* CartWithTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C54DE829421E2900E4BE7A /* CartWithTableViewController.swift */; };
+		68C54DEE29421E5500E4BE7A /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C54DEC29421E5500E4BE7A /* CartTableViewCell.swift */; };
+		68C54DEF29421E5500E4BE7A /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68C54DED29421E5500E4BE7A /* CartTableViewCell.xib */; };
+		68C54DF229426E0400E4BE7A /* sideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C54DF029426E0400E4BE7A /* sideMenuTableViewCell.swift */; };
+		68C54DF329426E0400E4BE7A /* sideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68C54DF129426E0400E4BE7A /* sideMenuTableViewCell.xib */; };
+		68C54DF5294341B500E4BE7A /* DecimalWon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C54DF4294341B500E4BE7A /* DecimalWon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +70,14 @@
 		68C54DDA29411E4700E4BE7A /* SidePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidePopupViewController.swift; sourceTree = "<group>"; };
 		68C54DDE294120F600E4BE7A /* SidePopupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidePopupCollectionViewCell.swift; sourceTree = "<group>"; };
 		68C54DDF294120F600E4BE7A /* SidePopupCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SidePopupCollectionViewCell.xib; sourceTree = "<group>"; };
+		68C54DE22942106300E4BE7A /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
+		68C54DE429421C2800E4BE7A /* IntrinsicTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrinsicTableView.swift; sourceTree = "<group>"; };
+		68C54DE829421E2900E4BE7A /* CartWithTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartWithTableViewController.swift; sourceTree = "<group>"; };
+		68C54DEC29421E5500E4BE7A /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		68C54DED29421E5500E4BE7A /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
+		68C54DF029426E0400E4BE7A /* sideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		68C54DF129426E0400E4BE7A /* sideMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = sideMenuTableViewCell.xib; sourceTree = "<group>"; };
+		68C54DF4294341B500E4BE7A /* DecimalWon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalWon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +119,7 @@
 			children = (
 				680954C7293E6AB600A9CE31 /* MenuModel.swift */,
 				680954CF293FB3D500A9CE31 /* SideMenuModel.swift */,
+				68C54DE22942106300E4BE7A /* CartModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -126,6 +143,7 @@
 		687526A5293307BC0001376D /* 02lifecycle */ = {
 			isa = PBXGroup;
 			children = (
+				68C54DE629421DE300E4BE7A /* Cart */,
 				68C54DDC294120C300E4BE7A /* Side */,
 				680954C4293E680A00A9CE31 /* Model */,
 				680954BE293E59BB00A9CE31 /* Order */,
@@ -142,6 +160,8 @@
 				682EA2E22936012D0050A2EF /* CartViewController.swift */,
 				682EA2E4293723A40050A2EF /* PopupViewController.swift */,
 				68C54DD82941178500E4BE7A /* MyNavigationViewController.swift */,
+				68C54DE429421C2800E4BE7A /* IntrinsicTableView.swift */,
+				68C54DF4294341B500E4BE7A /* DecimalWon.swift */,
 			);
 			path = 02lifecycle;
 			sourceTree = "<group>";
@@ -160,6 +180,26 @@
 			children = (
 				68C54DDE294120F600E4BE7A /* SidePopupCollectionViewCell.swift */,
 				68C54DDF294120F600E4BE7A /* SidePopupCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		68C54DE629421DE300E4BE7A /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				68C54DE729421DEC00E4BE7A /* Cell */,
+				68C54DE829421E2900E4BE7A /* CartWithTableViewController.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		68C54DE729421DEC00E4BE7A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				68C54DEC29421E5500E4BE7A /* CartTableViewCell.swift */,
+				68C54DED29421E5500E4BE7A /* CartTableViewCell.xib */,
+				68C54DF029426E0400E4BE7A /* sideMenuTableViewCell.swift */,
+				68C54DF129426E0400E4BE7A /* sideMenuTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -225,7 +265,9 @@
 				687526B3293307BD0001376D /* LaunchScreen.storyboard in Resources */,
 				687526B0293307BD0001376D /* Assets.xcassets in Resources */,
 				680954C3293E5AC800A9CE31 /* OrderTableViewCell.xib in Resources */,
+				68C54DEF29421E5500E4BE7A /* CartTableViewCell.xib in Resources */,
 				687526AE293307BC0001376D /* Main.storyboard in Resources */,
+				68C54DF329426E0400E4BE7A /* sideMenuTableViewCell.xib in Resources */,
 				680954CC293F783900A9CE31 /* OrderCollectionViewCell.xib in Resources */,
 				680954D8293FBEAD00A9CE31 /* OrderDetailTableViewCell.xib in Resources */,
 				68C54DE1294120F700E4BE7A /* SidePopupCollectionViewCell.xib in Resources */,
@@ -244,10 +286,16 @@
 				68AC9728293394B700EBFCB4 /* CollectionViewCell.swift in Sources */,
 				687526BB293329630001376D /* UITabBarViewController.swift in Sources */,
 				682EA2E32936012D0050A2EF /* CartViewController.swift in Sources */,
+				68C54DEE29421E5500E4BE7A /* CartTableViewCell.swift in Sources */,
+				68C54DF5294341B500E4BE7A /* DecimalWon.swift in Sources */,
+				68C54DE929421E2900E4BE7A /* CartWithTableViewController.swift in Sources */,
+				68C54DE529421C2800E4BE7A /* IntrinsicTableView.swift in Sources */,
 				68C54DDB29411E4700E4BE7A /* SidePopupViewController.swift in Sources */,
 				687526AB293307BC0001376D /* ViewController.swift in Sources */,
+				68C54DF229426E0400E4BE7A /* sideMenuTableViewCell.swift in Sources */,
 				682EA2E129352B940050A2EF /* DetailViewController.swift in Sources */,
 				68C54DE0294120F600E4BE7A /* SidePopupCollectionViewCell.swift in Sources */,
+				68C54DE32942106300E4BE7A /* CartModel.swift in Sources */,
 				687526A7293307BC0001376D /* AppDelegate.swift in Sources */,
 				680954C2293E5AC800A9CE31 /* OrderTableViewCell.swift in Sources */,
 				680954CB293F783900A9CE31 /* OrderCollectionViewCell.swift in Sources */,

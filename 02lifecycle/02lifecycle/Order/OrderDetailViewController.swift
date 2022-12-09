@@ -110,7 +110,10 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
             present(popupVC, animated: false)
         }
         else {
-            //TODO: 장바구니로 push
+            let cartVC = storyboard?.instantiateViewController(withIdentifier: "cartListVC") as! CartWithTableViewController
+//                cartVC.cartList.append(menu)
+            cartVC.cartList = [menu]
+            navigationController?.pushViewController(cartVC, animated: true)
         }
     }
     
