@@ -8,7 +8,7 @@
 import UIKit
 
 class OrderCollectionViewCell: UICollectionViewCell {
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -17,4 +17,9 @@ class OrderCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var categoryNameLabel: UILabel!
     
     @IBOutlet weak var categoryUIVIew: UIView!
+
+    public func setupUI(_ data: String){
+        self.categoryNameLabel.text = data
+    }
+    
 }

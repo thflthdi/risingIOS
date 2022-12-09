@@ -12,6 +12,9 @@ class CartWithTableViewController: UIViewController {
     var cartModel = CartModel()
     var cartList: [setInfo] = []
     var isChecked = false
+    var friedList: [sideMenuInfo] = []
+    var drinkList: [sideMenuInfo] = []
+    var beforecellIndex = 0
 
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var totalMenuCountLabel: UILabel!
@@ -29,9 +32,13 @@ class CartWithTableViewController: UIViewController {
         
         //마지막 cell이 하단 바에 가려져서 하단에 버퍼 추가
         cartTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
-        
+
         for cartItem in cartList {
-            CartModel.cartList.append(CartMenuInfo(menuImage: cartItem.setImage, menuName: cartItem.setName, menuPrice: cartItem.setPrice, menuCtn: 1, menuTotal: cartItem.setPrice))
+            cartModel.create(
+                CartMenuInfo(
+                    menuImage: cartItem.setImage, menuName: cartItem.setName, menuPrice: cartItem.setPrice, menuCtn: 1, menuTotal: cartItem.setPrice, drinkList: self.drinkList, friedList: self.friedList
+                )
+            )
         }
         
         self.totalMenuCountLabel.text = "삭제" + String(cartModel.isCheckedCount())
@@ -88,17 +95,15 @@ extension CartWithTableViewController: UITableViewDelegate, UITableViewDataSourc
         let cell = tableView.dequeueReusableCell(withIdentifier: "CartTableViewCell", for: indexPath) as! CartTableViewCell
         cell.setupUI(cartModel.read(indexPath.section))
         cell.index = indexPath.section
-        
         cell.prepareCheck(indexPath.section)
         
         cell.delegate = self
-        
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 350
+        return 300
     }
     
     

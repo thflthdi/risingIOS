@@ -25,6 +25,10 @@ class CartModel {
     //하지만 난 필요 - 실제 협업에서는 서버에서 주는 데이터를 이용하면 되기 때문에 지금만 써보자!
     static var cartList: [CartMenuInfo] = []
 
+    public func create(_ menu: CartMenuInfo){
+        CartModel.cartList.append(menu)
+    }
+    
     public func count() -> Int {
         return CartModel.cartList.count
     }

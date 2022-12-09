@@ -34,11 +34,18 @@ class SideMenuModel {
     //MARK: - Data
     //size: L
     private var sideMenuLArray: Array<sideMenuInfo> = [
-        sideMenuInfo(name:"프렌치프라이L", price: 0, image: UIImage(named: "bulgogi")!, value: "fried", size: "L"),
+        sideMenuInfo(name:"프렌치프라이L", price: 0, image: UIImage(named: "fri")!, value: "fried", size: "L"),
+        sideMenuInfo(name:"앵그리너겟킹 4조각 교환", price: 300, image: UIImage(named: "angry")!, value: "fried", size: "L"),
+        sideMenuInfo(name:"너겟킹 4조각 교환", price: 300, image: UIImage(named: "nerget")!, value: "fried", size: "L"),
+        sideMenuInfo(name:"치즈프라이 교환", price: 400, image: UIImage(named: "cheese")!, value: "fried", size: "L"),
     ]
     
     private var sideDrinkLArray: Array<sideMenuInfo> = [
-        sideMenuInfo(name:"콜라L", price: 0, image: UIImage(named: "bulgogi")!, value: "drink", size: "L"),
+        sideMenuInfo(name:"콜라L", price: 0, image: UIImage(named: "coka")!, value: "drink", size: "L"),
+        sideMenuInfo(name:"코카콜라 제로L 교환", price: 0, image: UIImage(named: "zero")!, value: "drink", size: "L"),
+        sideMenuInfo(name:"스프라이트L 교환", price: 0, image: UIImage(named: "sprite")!, value: "drink", size: "L"),
+        sideMenuInfo(name:"씨그램L 교환", price: 0, image: UIImage(named: "se")!, value: "drink", size: "L"),
+        sideMenuInfo(name:"미닛메이드 오렌지 교환", price: 600, image: UIImage(named: "oran")!, value: "drink", size: "L"),
     ]
 
     

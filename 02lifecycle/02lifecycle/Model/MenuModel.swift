@@ -32,6 +32,8 @@ struct burgerInfo {
 
 class MenuModel {
 //    static let shared = MenuModel()
+    private var category: [String] = ["스페셜", "신제품", "프리미엄", "와퍼&주니어", "치킨&슈림프", "사이드", "음료&디저트", "독퍼"]
+    
     private var menuArray: Array<burgerInfo> = [
         burgerInfo(index:1, name:"비프불고기버거", price: 4800, description: "달콤판 불고기소스와 100% 순쇠고기 패티의 감칠맛나는 조화, 비프불고기버거!", isChecked: true, imageAdd: UIImage(named: "bulgogi")!, category: "new"),
         burgerInfo(index:2, name:"골든치즈렐라 X", price: 11500, description: "황금빛 치즈가 통째로! 모짜렐라 치즈와 체다 치즈가 만나 풍미 작렬!", isChecked: true, imageAdd: UIImage(named: "x")!, category: "new"),
@@ -48,4 +50,9 @@ class MenuModel {
     public func read(at: Int) -> burgerInfo {
         return menuArray[at]
     }
+    
+    public func cateRead(at: Int) -> String {
+        return category[at]
+    }
+
 }

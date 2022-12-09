@@ -14,6 +14,7 @@ class OrderViewController: UIViewController {
     @IBOutlet weak var orderCollectionVew: UICollectionView!
     
     private let menuModel = MenuModel()
+    let sectionInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +27,8 @@ class OrderViewController: UIViewController {
         orderTableView.dataSource = self
         orderTableView.register(UINib(nibName: "OrderTableViewCell", bundle: nil), forCellReuseIdentifier: "OrderTableViewCell")
         
-        orderCollectionVew.delegate = self
-        orderCollectionVew.dataSource = self
+//        orderCollectionVew.delegate = self
+//        orderCollectionVew.dataSource = self
         
     }
 
@@ -60,22 +61,47 @@ extension OrderViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension OrderViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "orderCC", for: indexPath) as! OrderCollectionViewCell
-        
-        return cell
-    }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 10  , height:  10)
+//extension OrderViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 8
 //    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    }
-}
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "orderCC", for: indexPath) as! OrderCollectionViewCell
+//
+//        cell.setupUI(menuModel.cateRead(at: indexPath.row))
+//
+//        return cell
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "orderCC", for: indexPath) as! OrderCollectionViewCell
+//        let item = menuModel.cateRead(at: indexPath.row)
+//        let itemSize = item.size(withAttributes: [
+//                    NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14)
+//                ])
+//            let width = collectionView.frame.width
+//            let height = collectionView.frame.height
+//            let itemsPerRow: CGFloat = 4
+//            let widthPadding = sectionInsets.left * (itemsPerRow + 1)
+//            let itemsPerColumn: CGFloat = 2
+//            let heightPadding = sectionInsets.top * (itemsPerColumn + 1)
+//            let cellWidth = (width - widthPadding) / itemsPerRow
+//            let cellHeight = (height - heightPadding) / itemsPerColumn
+//
+////            let width = itemSize - cellWidth
+//            return CGSize(width: cellWidth, height: cellHeight)
+//
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//
+//        return sectionInsets
+//    }
+//
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//
+//        return sectionInsets.left
+//    }
+//}

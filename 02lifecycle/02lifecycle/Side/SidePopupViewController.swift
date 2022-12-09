@@ -7,12 +7,21 @@
 
 import UIKit
 
+protocol SidePopupViewControllerDelegate: AnyObject {
+    func passData(_ cartList: [setInfo],_ friedList: [sideMenuInfo],_ drinkList: [sideMenuInfo])
+}
+
 class SidePopupViewController: UIViewController {
 
+    weak var delegate: SidePopupViewControllerDelegate?
     var sideModel = SideMenuModel()
     let sectionInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     var categoryValue = "fried"
     var setSize = "L"
+    var cartList: [setInfo] = []
+    var friedList: [sideMenuInfo] = []
+    var drinkList: [sideMenuInfo] = []
+    var dumpList: [sideMenuInfo] = []
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var sideCollectionView: UICollectionView!
@@ -30,13 +39,31 @@ class SidePopupViewController: UIViewController {
     }
     
     @IBAction func submitButtonDidTap(_ sender: UIButton) {
-        let popupVC = storyboard?.instantiateViewController(withIdentifier: "sidePopupVC") as! SidePopupViewController
-        popupVC.modalPresentationStyle = .overFullScreen
-        popupVC.categoryValue = Value.Drink.rawValue
-        popupVC.setSize = setSize
+
+        switch categoryValue {
         
-        //TODO: 선택을 했을 때에만 이동할 수 있도록 수정
-        present(popupVC, animated: false)
+        case Value.Fried.rawValue:
+            if dumpList.isEmpty {
+                print("메뉴를 선택해 주세요")
+            }else {
+                self.categoryValue = Value.Drink.rawValue
+                self.friedList.append(self.dumpList.popLast()!)
+                dumpList.removeAll()
+                self.sideCollectionView.reloadData()
+            }
+            
+        case Value.Drink.rawValue:
+            if dumpList.isEmpty {
+                print("메뉴를 선택해 주세요")
+            }else {
+                self.drinkList.append(self.dumpList.popLast()!)
+                dumpList.removeAll()
+                delegate?.passData(self.cartList, self.friedList, self.drinkList)
+                self.dismiss(animated: false)
+            }
+        default:
+            print("error")
+        }
     }
 }
 
@@ -52,7 +79,7 @@ extension SidePopupViewController: UICollectionViewDelegate, UICollectionViewDat
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SidePopupCollectionViewCell
         cell.setupUI(sideModel.read(at: indexPath.row, size: setSize ,cate: categoryValue ))
-        
+                
         return cell
         
     }
@@ -92,6 +119,19 @@ extension SidePopupViewController: UICollectionViewDelegate, UICollectionViewDat
         cell.isSelected = true
         cell.setSelected()
         
+        switch categoryValue {
+        case Value.Fried.rawValue:
+            if cell.isSelected {
+                dumpList.append(sideModel.read(at: indexPath.row, size: setSize ,cate: categoryValue ))
+            }
+        case Value.Drink.rawValue:
+            if cell.isSelected {
+                dumpList.append(sideModel.read(at: indexPath.row, size: setSize ,cate: categoryValue ))
+
+            }
+        default:
+            print("error - cellforitemat")
+        }
     }
     
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol CartTableViewCellDelegate {
+protocol CartTableViewCellDelegate: AnyObject {
     func reloadTableView()
 }
 
@@ -15,7 +15,7 @@ class CartTableViewCell: UITableViewCell {
 
     var index: Int = 0
     let cartModel = CartModel()
-    var delegate: CartTableViewCellDelegate?
+    weak var delegate: CartTableViewCellDelegate?
     
     @IBOutlet weak var backgroundUIView: UIView!
     @IBOutlet weak var menuImage: UIImageView!
@@ -31,6 +31,10 @@ class CartTableViewCell: UITableViewCell {
         super.awakeFromNib()
         backgroundUIView.layer.cornerRadius = 8
         backgroundUIView.layer.masksToBounds = true
+        
+//        sideMenuTableView.delegate = self
+//        sideMenuTableView.dataSource = self
+//        sideMenuTableView.register(UINib(nibName: "sideMenuTableViewCell", bundle: nil), forCellReuseIdentifier: "sideMenuTableViewCell")
     }
     
     override func prepareForReuse() {
@@ -110,3 +114,16 @@ class CartTableViewCell: UITableViewCell {
         }
     }
 }
+
+//extension CartTableViewCell: UITableViewDelegate, UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 3
+//    }
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "sideMenuTableViewCell", for: indexPath) as! sideMenuTableViewCell
+//        return cell
+//    }
+//    
+//    
+//}

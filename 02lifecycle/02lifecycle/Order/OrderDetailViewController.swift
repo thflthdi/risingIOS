@@ -25,6 +25,9 @@ class OrderDetailViewController: UIViewController {
     @IBOutlet weak var setListTableView: UITableView!
     private let menuModel = MenuModel()
     private var setList: [setInfo] = []
+    var friedList: [sideMenuInfo] = []
+    var drinkList: [sideMenuInfo] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,9 +68,20 @@ class OrderDetailViewController: UIViewController {
 }
 
 //MARK: - Extension
-extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource {
+extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource, SidePopupViewControllerDelegate {
     
-    // cell간 spacing 조절을 위해 raw는 1개, section을 여러개로 둠
+    func passData(_ cartList: [setInfo], _ friedList: [sideMenuInfo], _ drinkList: [sideMenuInfo]) {
+        let cartVC = storyboard?.instantiateViewController(withIdentifier: "cartListVC") as! CartWithTableViewController
+        self.setList = cartList
+        self.friedList = friedList
+        self.drinkList = drinkList
+        cartVC.cartList = self.setList
+        cartVC.friedList = self.friedList
+        navigationController?.pushViewController(cartVC, animated: true)
+    }
+    
+    
+    // cell간 spacing 조절을 위해 row는 1개, section을 여러개로 둠
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -101,17 +115,20 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let popupVC = storyboard?.instantiateViewController(withIdentifier: "sidePopupVC") as! SidePopupViewController
         popupVC.modalPresentationStyle = .overFullScreen
-        let menu = setList[indexPath.section]
+        
+        //FIXME: 장바구니에서 뒤로 돌아오면 에러남
+        var menu = setList[indexPath.section]
         
         // single 사이즈는 사이드를 선택하지 않고 바로 장바구니로 이동함.
         if menu.size != Size.Single.rawValue {
             popupVC.categoryValue = Value.Fried.rawValue
             popupVC.setSize = menu.size
+            popupVC.cartList = [menu]
+            popupVC.delegate = self
             present(popupVC, animated: false)
         }
         else {
             let cartVC = storyboard?.instantiateViewController(withIdentifier: "cartListVC") as! CartWithTableViewController
-//                cartVC.cartList.append(menu)
             cartVC.cartList = [menu]
             navigationController?.pushViewController(cartVC, animated: true)
         }

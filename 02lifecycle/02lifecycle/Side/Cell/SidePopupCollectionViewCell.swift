@@ -29,6 +29,9 @@ class SidePopupCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    override func prepareForReuse() {
+        self.checkedImage.isHidden = true
+    }
 
     public func setupUI(_ cellData: sideMenuInfo) {
         self.sideImage.image = cellData.image
