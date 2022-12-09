@@ -24,12 +24,19 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var menuCountLabel: UILabel!
     @IBOutlet weak var menuTotalPriceLabel: UILabel!
     @IBOutlet weak var sideMenuTableView: UITableView!
+    @IBOutlet weak var checkButton: UIButton!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundUIView.layer.cornerRadius = 8
         backgroundUIView.layer.masksToBounds = true
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        let checkimage = UIImage(systemName: "checkmark.square.fill")
+        self.checkButton.setImage(checkimage, for: .normal)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -77,4 +84,29 @@ class CartTableViewCell: UITableViewCell {
 
     }
     
+    @IBAction func checkButtonDidTap(_ sender: UIButton) {
+        let checkimage = UIImage(systemName: "checkmark.square.fill")
+        let uncheckimage = UIImage(systemName: "square")
+
+        let isChecked = cartModel.isCheckedUpdate(index)
+//        print(index, isChecked)
+        if isChecked {
+            self.checkButton.setImage(checkimage, for: .normal)
+        } else {
+            self.checkButton.setImage(uncheckimage, for: .normal)
+        }
+        self.delegate?.reloadTableView()
+    }
+    
+    public func prepareCheck(_ at: Int){
+        let checkimage = UIImage(systemName: "checkmark.square.fill")
+        let uncheckimage = UIImage(systemName: "square")
+
+        let isChecked = cartModel.isCheckedRead(at)
+        if isChecked {
+            self.checkButton.setImage(checkimage, for: .normal)
+        } else {
+            self.checkButton.setImage(uncheckimage, for: .normal)
+        }
+    }
 }

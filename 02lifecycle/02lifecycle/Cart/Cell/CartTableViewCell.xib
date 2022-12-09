@@ -120,6 +120,9 @@
                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" weight="bold"/>
                             <color key="baseForegroundColor" red="0.3169793487" green="0.1368014514" blue="0.077790267770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="checkButtonDidTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="F2N-6M-Iws"/>
+                        </connections>
                     </button>
                     <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="362" placeholderIntrinsicHeight="54" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HUK-Lg-RWP">
                         <rect key="frame" x="20" y="151.66666666666666" width="334" height="54"/>
@@ -176,6 +179,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="backgroundUIView" destination="OfZ-vP-cS4" id="Lyc-GW-h0W"/>
+                <outlet property="checkButton" destination="LYB-1i-yU6" id="rjl-qH-H64"/>
                 <outlet property="menuCountLabel" destination="jtH-FP-5Bp" id="7y7-7H-XhW"/>
                 <outlet property="menuImage" destination="CJ2-dL-x90" id="NA7-P8-v4q"/>
                 <outlet property="menuNameLabel" destination="XHy-nq-Ife" id="GPr-Ma-qRE"/>

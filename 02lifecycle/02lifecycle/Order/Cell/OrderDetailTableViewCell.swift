@@ -33,6 +33,6 @@ class OrderDetailTableViewCell: UITableViewCell {
     public func setupUI(_ cellData: setInfo) {
         self.setImage.image = cellData.setImage
         self.nameLabel.text = cellData.setName
-        self.priceLabel.text = String(cellData.setPrice)
+        self.priceLabel.text = DecimalWon(cellData.setPrice)
     }
 }

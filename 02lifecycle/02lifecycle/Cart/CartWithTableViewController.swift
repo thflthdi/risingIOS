@@ -11,9 +11,12 @@ class CartWithTableViewController: UIViewController {
     
     var cartModel = CartModel()
     var cartList: [setInfo] = []
+    var isChecked = false
 
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var totalMenuCountLabel: UILabel!
+    @IBOutlet weak var checkButton: UIButton!
+    @IBOutlet weak var totalPriceLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +33,33 @@ class CartWithTableViewController: UIViewController {
         for cartItem in cartList {
             CartModel.cartList.append(CartMenuInfo(menuImage: cartItem.setImage, menuName: cartItem.setName, menuPrice: cartItem.setPrice, menuCtn: 1, menuTotal: cartItem.setPrice))
         }
+        
+        self.totalMenuCountLabel.text = "삭제" + String(cartModel.isCheckedCount())
+        self.totalPriceLabel.text = DecimalWon(cartModel.totalPrice())
     }
+    
+    @IBAction func totalCheckButtonDidTap(_ sender: UIButton) {
+        let checkimage = UIImage(systemName: "checkmark.square.fill")
+        let uncheckimage = UIImage(systemName: "square")
+
+        if self.isChecked {
+            self.checkButton.setImage(checkimage, for: .normal)
+            cartModel.isCheckedAllUpdate(true)
+            self.isChecked = false
+        } else {
+            self.checkButton.setImage(uncheckimage, for: .normal)
+            cartModel.isCheckedAllUpdate(false)
+            self.isChecked = true
+        }
+        reloadTableView()
+        
+    }
+    
+    @IBAction func deleteButtonDidTap(_ sender: UIButton) {
+        cartModel.deleteAll()
+        reloadTableView()
+    }
+    
 }
 
 //MARK: - Extension
@@ -38,6 +67,8 @@ extension CartWithTableViewController: UITableViewDelegate, UITableViewDataSourc
     
     func reloadTableView() {
         self.cartTableView.reloadData()
+        self.totalMenuCountLabel.text = "삭제" + String(cartModel.isCheckedCount())
+        self.totalPriceLabel.text = DecimalWon(cartModel.totalPrice())
         print(#function)
     }
     
@@ -57,12 +88,19 @@ extension CartWithTableViewController: UITableViewDelegate, UITableViewDataSourc
         let cell = tableView.dequeueReusableCell(withIdentifier: "CartTableViewCell", for: indexPath) as! CartTableViewCell
         cell.setupUI(cartModel.read(indexPath.section))
         cell.index = indexPath.section
+        
+        cell.prepareCheck(indexPath.section)
+        
         cell.delegate = self
+        
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 350
     }
+    
+    
     
 }

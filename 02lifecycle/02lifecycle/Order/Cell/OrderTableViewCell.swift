@@ -27,7 +27,7 @@ class OrderTableViewCell: UITableViewCell {
     public func setupUI(_ cellData: burgerInfo) {
         self.cellMenuImage.image = cellData.imageAdd
         self.cellNameLabel.text = cellData.name
-        self.cellPriceLabel.text = String(cellData.price)
+        self.cellPriceLabel.text = DecimalWon(cellData.price)
     }
     
 }

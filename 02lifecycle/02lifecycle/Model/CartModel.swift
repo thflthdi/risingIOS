@@ -14,6 +14,9 @@ struct CartMenuInfo {
     var menuPrice: Int
     var menuCtn: Int
     var menuTotal: Int
+    var isChecked: Bool = true
+    var drinkList: [sideMenuInfo] = []
+    var friedList: [sideMenuInfo] = []
 }
 
 class CartModel {
@@ -26,8 +29,25 @@ class CartModel {
         return CartModel.cartList.count
     }
     
+    public func isCheckedCount() -> Int {
+        let filteredList = CartModel.cartList.filter { CartMenuInfo in
+            return CartMenuInfo.isChecked
+        }
+        return filteredList.count
+    }
+    
+    public func totalPrice() -> Int {
+        return CartModel.cartList.reduce(0) { partialResult, menu in
+            partialResult + (menu.menuCtn * menu.menuPrice)
+        }
+    }
+    
     public func read(_ at: Int) -> CartMenuInfo {
         return CartModel.cartList[at]
+    }
+    
+    public func isCheckedRead(_ at: Int) -> Bool {
+        return CartModel.cartList[at].isChecked
     }
     
     public func update(_ at: Int, _ count: Int) {
@@ -35,7 +55,31 @@ class CartModel {
         CartModel.cartList[at].menuTotal = count * CartModel.cartList[at].menuPrice
     }
     
+    public func isCheckedUpdate(_ at: Int) -> Bool {
+        var ischecked = CartModel.cartList[at].isChecked
+        if ischecked {
+            CartModel.cartList[at].isChecked = false
+            ischecked = false
+        }else {
+            CartModel.cartList[at].isChecked = true
+            ischecked = true
+        }
+        return ischecked
+    }
+    
+    public func isCheckedAllUpdate(_ ischecked: Bool) {
+        for index in 0..<CartModel.cartList.count {
+            CartModel.cartList[index].isChecked = ischecked
+        }
+    }
+    
     public func delete(_ at: Int) {
         CartModel.cartList.remove(at: at)
+    }
+    
+    public func deleteAll() {
+        CartModel.cartList = CartModel.cartList.filter({ menu in
+            menu.isChecked == false
+        })
     }
 }
