@@ -73,6 +73,7 @@ class CartWithTableViewController: UIViewController {
 extension CartWithTableViewController: UITableViewDelegate, UITableViewDataSource, CartTableViewCellDelegate {
     
     func reloadTableView() {
+        print("호출")
         self.cartTableView.reloadData()
         self.totalMenuCountLabel.text = "삭제" + String(cartModel.isCheckedCount())
         self.totalPriceLabel.text = DecimalWon(cartModel.totalPrice())
