@@ -19,12 +19,14 @@ class TouchViewController: UIViewController {
     @IBOutlet weak var greenImage: UIImageView!
     @IBOutlet weak var countBackgroundView: UIView!
     
+    @IBOutlet weak var disCountlabel: UILabel!
     var cycleManIsTrue = false
     var animationImageList = RobotModel().mainChaAniImages
     let robotInfo = RobotModel().RobotInfoList
     var presentX: Double = 0
     var presentY: Double = 0
     var robotAnimeIsTrue = [false, false, false, false, false]
+    var discount: Int = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +40,8 @@ class TouchViewController: UIViewController {
         self.countBackgroundView.layer.cornerRadius = 8
         self.countBackgroundView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMaxYCorner, .layerMinXMinYCorner)
 
+        self.disCountlabel.clipsToBounds = true
+        self.disCountlabel.layer.cornerRadius = 8
         
         NotificationCenter.default.addObserver(self, selector: #selector(checkCount), name: Notification.Name("userCount"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(notiTab), name: Notification.Name("tab"), object: nil)
@@ -54,6 +58,25 @@ class TouchViewController: UIViewController {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Count"), object: nil )
             self.checkCount()
         }
+        
+        // discount Count
+        DispatchQueue.global().async {
+            let runloop = RunLoop.current
+            var count = UserModel.count
+            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+                if self.discount == 0 {
+                    print(count, UserModel.count)
+                    if UserModel.count > 0 && count == UserModel.count {
+                        UserModel.count -= 1
+                    }
+                    self.discount = 10
+                    count = UserModel.count
+                }else {
+                    self.discount -= 1
+                }
+            }
+            runloop.run()
+        }
     }
     
     // 3. this method is called when a tap is recognized
@@ -65,8 +88,8 @@ class TouchViewController: UIViewController {
         
     @objc func checkCount(){
         self.touchCountlabel.text = String(UserModel.count) + "   "
-        
-            }
+        self.disCountlabel.text = String(self.discount)
+    }
     
     @objc func notiTab(_ noti: Notification){
         let at = noti.object as! Int

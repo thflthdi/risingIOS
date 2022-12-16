@@ -16,11 +16,10 @@
 		6855115B294BC8AF008B8323 /* UpgradeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6855115A294BC8AF008B8323 /* UpgradeCollectionCell.swift */; };
 		687D873E294BDEAD000EC86F /* CharacterListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 687D873B294BDEAD000EC86F /* CharacterListCollectionViewCell.xib */; };
 		687D873F294BDEAD000EC86F /* CharacterListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D873C294BDEAD000EC86F /* CharacterListCollectionViewCell.swift */; };
-		687D8744294BDEF7000EC86F /* SystemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D8741294BDEF7000EC86F /* SystemModel.swift */; };
-		687D8745294BDEF7000EC86F /* RobotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D8742294BDEF7000EC86F /* RobotModel.swift */; };
-		687D8746294BDEF7000EC86F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D8743294BDEF7000EC86F /* UserModel.swift */; };
 		687D8748294BDFE0000EC86F /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D8747294BDFE0000EC86F /* CharacterListViewController.swift */; };
 		687D874A294BF308000EC86F /* TouchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D8749294BF308000EC86F /* TouchViewController.swift */; };
+		687D874C294CF96D000EC86F /* RobotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D874B294CF96D000EC86F /* RobotModel.swift */; };
+		687D874E294CFAE7000EC86F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D874D294CFAE7000EC86F /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,11 +34,10 @@
 		6855115A294BC8AF008B8323 /* UpgradeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeCollectionCell.swift; sourceTree = "<group>"; };
 		687D873B294BDEAD000EC86F /* CharacterListCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterListCollectionViewCell.xib; sourceTree = "<group>"; };
 		687D873C294BDEAD000EC86F /* CharacterListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterListCollectionViewCell.swift; sourceTree = "<group>"; };
-		687D8741294BDEF7000EC86F /* SystemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemModel.swift; sourceTree = "<group>"; };
-		687D8742294BDEF7000EC86F /* RobotModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotModel.swift; sourceTree = "<group>"; };
-		687D8743294BDEF7000EC86F /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		687D8747294BDFE0000EC86F /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
 		687D8749294BF308000EC86F /* TouchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchViewController.swift; sourceTree = "<group>"; };
+		687D874B294CF96D000EC86F /* RobotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotModel.swift; sourceTree = "<group>"; };
+		687D874D294CFAE7000EC86F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +70,6 @@
 		6855113F294BC33D008B8323 /* 03Game */ = {
 			isa = PBXGroup;
 			children = (
-				687D8740294BDEF7000EC86F /* Model */,
 				687D8738294BDEAD000EC86F /* CharacterList */,
 				68551140294BC33D008B8323 /* AppDelegate.swift */,
 				68551142294BC33D008B8323 /* SceneDelegate.swift */,
@@ -83,6 +80,7 @@
 				6855114E294BC33E008B8323 /* Info.plist */,
 				6855115A294BC8AF008B8323 /* UpgradeCollectionCell.swift */,
 				687D8749294BF308000EC86F /* TouchViewController.swift */,
+				687D874F294CFCDA000EC86F /* Model */,
 			);
 			path = 03Game;
 			sourceTree = "<group>";
@@ -106,15 +104,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		687D8740294BDEF7000EC86F /* Model */ = {
+		687D874F294CFCDA000EC86F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				687D8741294BDEF7000EC86F /* SystemModel.swift */,
-				687D8742294BDEF7000EC86F /* RobotModel.swift */,
-				687D8743294BDEF7000EC86F /* UserModel.swift */,
+				687D874B294CF96D000EC86F /* RobotModel.swift */,
+				687D874D294CFAE7000EC86F /* UserModel.swift */,
 			);
-			name = Model;
-			path = ../../03MyGame/03MyGame/Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,14 +186,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				687D874A294BF308000EC86F /* TouchViewController.swift in Sources */,
-				687D8744294BDEF7000EC86F /* SystemModel.swift in Sources */,
+				687D874C294CF96D000EC86F /* RobotModel.swift in Sources */,
 				68551145294BC33D008B8323 /* ViewController.swift in Sources */,
-				687D8745294BDEF7000EC86F /* RobotModel.swift in Sources */,
 				68551141294BC33D008B8323 /* AppDelegate.swift in Sources */,
 				687D8748294BDFE0000EC86F /* CharacterListViewController.swift in Sources */,
 				6855115B294BC8AF008B8323 /* UpgradeCollectionCell.swift in Sources */,
 				687D873F294BDEAD000EC86F /* CharacterListCollectionViewCell.swift in Sources */,
-				687D8746294BDEF7000EC86F /* UserModel.swift in Sources */,
+				687D874E294CFAE7000EC86F /* UserModel.swift in Sources */,
 				68551143294BC33D008B8323 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

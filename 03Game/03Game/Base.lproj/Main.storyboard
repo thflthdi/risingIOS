@@ -180,7 +180,7 @@
             <objects>
                 <viewController id="JSA-04-cnX" customClass="TouchViewController" customModule="_3Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s5M-tx-AWu">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="455.33333333333331"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background1" translatesAutoresizingMaskIntoConstraints="NO" id="VzY-AH-AYw">
@@ -235,6 +235,17 @@
                                     <constraint firstAttribute="width" constant="50" id="yCm-J0-tRe"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSs-ob-7Gi">
+                                <rect key="frame" x="353" y="12.666666666666664" width="30" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="2HF-1Q-rjy"/>
+                                    <constraint firstAttribute="height" constant="40" id="eqv-Pg-Hkb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eFL-Do-Mci"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -244,9 +255,11 @@
                             <constraint firstItem="p8F-oO-cr5" firstAttribute="leading" secondItem="eFL-Do-Mci" secondAttribute="leading" id="38t-hW-hte"/>
                             <constraint firstItem="9sZ-Bl-pZH" firstAttribute="centerX" secondItem="htc-KY-8mx" secondAttribute="centerX" constant="-30" id="9Sh-FP-Pw0"/>
                             <constraint firstItem="PSj-kH-scz" firstAttribute="leading" secondItem="fcH-JZ-oK7" secondAttribute="trailing" id="LA7-4n-1x3"/>
+                            <constraint firstItem="iSs-ob-7Gi" firstAttribute="centerY" secondItem="PSj-kH-scz" secondAttribute="centerY" id="LQb-qE-Cel"/>
                             <constraint firstItem="j3g-Gb-avC" firstAttribute="leading" secondItem="s5M-tx-AWu" secondAttribute="leading" constant="10" id="Mcd-uL-s0u"/>
                             <constraint firstItem="PSj-kH-scz" firstAttribute="centerY" secondItem="fcH-JZ-oK7" secondAttribute="centerY" id="MnS-P1-5VM"/>
                             <constraint firstItem="VzY-AH-AYw" firstAttribute="leading" secondItem="eFL-Do-Mci" secondAttribute="leading" id="POu-Lw-au3"/>
+                            <constraint firstAttribute="trailing" secondItem="iSs-ob-7Gi" secondAttribute="trailing" constant="10" id="QLa-QN-Nqh"/>
                             <constraint firstItem="p8F-oO-cr5" firstAttribute="centerY" secondItem="eFL-Do-Mci" secondAttribute="centerY" id="X46-WE-iZx"/>
                             <constraint firstItem="htc-KY-8mx" firstAttribute="height" secondItem="s5M-tx-AWu" secondAttribute="height" multiplier="0.4" id="aZw-rK-0f2"/>
                             <constraint firstItem="htc-KY-8mx" firstAttribute="leading" secondItem="eFL-Do-Mci" secondAttribute="leading" id="bEc-vs-imY"/>
@@ -267,6 +280,7 @@
                         <outlet property="backgoroundImage" destination="VzY-AH-AYw" id="At8-LX-X9W"/>
                         <outlet property="countBackgroundView" destination="j3g-Gb-avC" id="BGA-se-Bln"/>
                         <outlet property="cycleManImage" destination="p8F-oO-cr5" id="Zqt-bf-v1u"/>
+                        <outlet property="disCountlabel" destination="iSs-ob-7Gi" id="krF-uF-VKs"/>
                         <outlet property="greenImage" destination="i8q-mg-oJL" id="vya-48-bzu"/>
                         <outlet property="mainImage" destination="htc-KY-8mx" id="bi1-Io-EdQ"/>
                         <outlet property="mainPresentImage" destination="9sZ-Bl-pZH" id="ZfW-JV-fol"/>
