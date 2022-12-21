@@ -13,7 +13,7 @@
 import Foundation
 
 // MARK: - ViliageFcstInfoService
-struct ViliageFcstInfoService: Codable {
+struct WeatherResponse: Codable {
     let response: Response
 }
 
@@ -46,12 +46,3 @@ struct Item: Codable {
 struct Header: Codable {
     let resultCode, resultMsg: String
 }
-
-// MARK - Request Params
-//struct RequestParams {
-//    let ServiceKey: String
-//    let pageNo, numOfRows: Int
-//    let dataType: String
-//    var base_date, base_time: Int
-//    var nx, ny: Double
-//}
