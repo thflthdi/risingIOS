@@ -13,6 +13,10 @@
 		687D87642951B17F000EC86F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 687D87622951B17F000EC86F /* Main.storyboard */; };
 		687D87662951B181000EC86F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 687D87652951B181000EC86F /* Assets.xcassets */; };
 		687D87692951B181000EC86F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 687D87672951B181000EC86F /* LaunchScreen.storyboard */; };
+		687D8773295304CA000EC86F /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D8772295304CA000EC86F /* WeatherModel.swift */; };
+		687D877529530615000EC86F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D877429530615000EC86F /* Constants.swift */; };
+		687D877C29532149000EC86F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 687D877B29532149000EC86F /* Alamofire */; };
+		687D877E29533BCE000EC86F /* XYconvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D877D29533BCE000EC86F /* XYconvert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,11 @@
 		687D87652951B181000EC86F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		687D87682951B181000EC86F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		687D876A2951B181000EC86F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		687D8772295304CA000EC86F /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		687D877429530615000EC86F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		687D87772953191B000EC86F /* Alamofire-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "Alamofire-master"; path = "../../../Downloads/Alamofire-master"; sourceTree = "<group>"; };
+		687D877829531954000EC86F /* Alamofire-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "Alamofire-master"; path = "../../../Downloads/Alamofire-master"; sourceTree = "<group>"; };
+		687D877D29533BCE000EC86F /* XYconvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYconvert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				687D877C29532149000EC86F /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +50,7 @@
 		687D87502951B17F000EC86F = {
 			isa = PBXGroup;
 			children = (
+				687D87762953191B000EC86F /* Packages */,
 				687D875B2951B17F000EC86F /* 05API */,
 				687D875A2951B17F000EC86F /* Products */,
 			);
@@ -56,6 +67,7 @@
 		687D875B2951B17F000EC86F /* 05API */ = {
 			isa = PBXGroup;
 			children = (
+				687D8771295304A6000EC86F /* Model */,
 				687D875C2951B17F000EC86F /* AppDelegate.swift */,
 				687D875E2951B17F000EC86F /* SceneDelegate.swift */,
 				687D87602951B17F000EC86F /* ViewController.swift */,
@@ -63,8 +75,27 @@
 				687D87652951B181000EC86F /* Assets.xcassets */,
 				687D87672951B181000EC86F /* LaunchScreen.storyboard */,
 				687D876A2951B181000EC86F /* Info.plist */,
+				687D877429530615000EC86F /* Constants.swift */,
+				687D877D29533BCE000EC86F /* XYconvert.swift */,
 			);
 			path = 05API;
+			sourceTree = "<group>";
+		};
+		687D8771295304A6000EC86F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				687D8772295304CA000EC86F /* WeatherModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		687D87762953191B000EC86F /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				687D87772953191B000EC86F /* Alamofire-master */,
+				687D877829531954000EC86F /* Alamofire-master */,
+			);
+			name = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +114,9 @@
 			dependencies = (
 			);
 			name = 05API;
+			packageProductDependencies = (
+				687D877B29532149000EC86F /* Alamofire */,
+			);
 			productName = 05API;
 			productReference = 687D87592951B17F000EC86F /* 05API.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +145,9 @@
 				Base,
 			);
 			mainGroup = 687D87502951B17F000EC86F;
+			packageReferences = (
+				687D877A29532149000EC86F /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 687D875A2951B17F000EC86F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,8 +175,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				687D877529530615000EC86F /* Constants.swift in Sources */,
 				687D87612951B17F000EC86F /* ViewController.swift in Sources */,
 				687D875D2951B17F000EC86F /* AppDelegate.swift in Sources */,
+				687D8773295304CA000EC86F /* WeatherModel.swift in Sources */,
+				687D877E29533BCE000EC86F /* XYconvert.swift in Sources */,
 				687D875F2951B17F000EC86F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +398,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		687D877A29532149000EC86F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		687D877B29532149000EC86F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 687D877A29532149000EC86F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 687D87512951B17F000EC86F /* Project object */;
 }
