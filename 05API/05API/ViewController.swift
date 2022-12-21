@@ -15,6 +15,12 @@ class ViewController: UIViewController {
     var locationManager: CLLocationManager?
     // Type: 위도와 경도를 알려주는 struct
     var currentLocation: CLLocationCoordinate2D!
+    
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

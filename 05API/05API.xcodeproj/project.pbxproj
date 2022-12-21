@@ -70,7 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				687D877F295350C0000EC86F /* API */,
-				687D8771295304A6000EC86F /* Model */,
 				687D875C2951B17F000EC86F /* AppDelegate.swift */,
 				687D875E2951B17F000EC86F /* SceneDelegate.swift */,
 				687D87602951B17F000EC86F /* ViewController.swift */,
@@ -82,13 +81,6 @@
 				687D877D29533BCE000EC86F /* XYconvert.swift */,
 			);
 			path = 05API;
-			sourceTree = "<group>";
-		};
-		687D8771295304A6000EC86F /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		687D87762953191B000EC86F /* Packages */ = {
