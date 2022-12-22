@@ -15,17 +15,47 @@ class ViewController: UIViewController {
     var locationManager: CLLocationManager?
     // Type: 위도와 경도를 알려주는 struct
     var currentLocation: CLLocationCoordinate2D!
+    var isGetData = false
+    
+    var PTYList: [Item] = []
+    var WSDList: [Item] = []
+    var T1HList: [Item] = []
+    var SKYList: [Item] = []
     
     @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var hourtemperUIView: UIView!
+    @IBOutlet weak var dustUIView: UIView!
+    @IBOutlet weak var wearUIView: UIView!
     
+    @IBOutlet weak var temperCityLabel: UILabel!
+    @IBOutlet weak var temperSwitchingLabel: UILabel!
+    @IBOutlet weak var temperLabel: UILabel!
+    @IBOutlet weak var weatherIconImage: UIImageView!
     
+    @IBOutlet weak var temperSixTimeCollectionView: UICollectionView!
     
-    
-
+// MARK: - 생명주기
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
+        radiusUIView()
         checkLocationAuth()
+        
+        self.temperSixTimeCollectionView.delegate = self
+        self.temperSixTimeCollectionView.dataSource = self
+
+    }
+    
+    
+// MARK: - function
+    
+    func radiusUIView() {
+        self.hourtemperUIView.clipsToBounds = true
+        self.hourtemperUIView.layer.cornerRadius = 10
+        self.dustUIView.clipsToBounds = true
+        self.dustUIView.layer.cornerRadius = 10
+        self.wearUIView.clipsToBounds = true
+        self.wearUIView.layer.cornerRadius = 10
     }
     
     // 유저 위치 권한 체크
@@ -86,6 +116,86 @@ extension ViewController: CLLocationManagerDelegate {
 // MARK: - API
 extension ViewController {
     func didSuccess(_ response: WeatherResponse) {
+        print(#function)
+        let item = response.response.body.items.item
+        for Item in item {
+            switch Item.category {
+            case "PTY":
+                PTYList.append(Item)
+            case "WSD":
+                WSDList.append(Item)
+            case "T1H":
+                T1HList.append(Item)
+            case "SKY":
+                SKYList.append(Item)
+            default:
+                continue
+            }
+        }
+        self.isGetData = true
+        self.temperSixTimeCollectionView.reloadData()
         
+        self.temperLabel.text = T1HList[0].fcstValue + " º"
+        setupIcon()
+    }
+    
+    func setupIcon(){
+        var image: UIImage = UIImage(systemName: "cloud.snow.fill")!
+        if PTYList[0].fcstValue == "0" {
+            switch SKYList[0].fcstValue {
+            case "1" :
+                image = UIImage(systemName: "sun.max.fill")!
+            case "3" :
+                image = UIImage(systemName: "cloud.sun.fill")!
+            case "4" :
+                image = UIImage(systemName: "cloud")!
+            default:
+                image = UIImage(systemName: "cloud")!
+            }
+        } else {
+            switch PTYList[0].fcstValue {
+            case "1":
+                image = UIImage(named: "cloud.rain")!
+            case "2", "6":
+                image = UIImage(named: "cloud.sleet")!
+            case "3", "7":
+                image = UIImage(named: "snow_icon")!
+            default:
+                image = UIImage(named: "cloud.snow")!
+            }
+        }
+        
+        self.weatherIconImage.image = image
+    }
+}
+
+
+// MARK: - UICollectionView
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 6
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "temperCell", for: indexPath) as! TemperCollectionViewCell
+        if isGetData {
+            cell.setupTemper(T1HList[indexPath.row])
+            cell.setupIcon(SKYList[indexPath.row], PTYList[indexPath.row])
+        }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let per: CGFloat = 6
+//        let width = (collectionView.frame.width - 15)/2
+        var width = collectionView.frame.width
+        let padding = 10 * (per + 1)
+        width = (width - padding) / per
+        
+        return CGSize(width: width, height: collectionView.frame.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
 }

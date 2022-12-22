@@ -18,6 +18,7 @@
 		687D877C29532149000EC86F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 687D877B29532149000EC86F /* Alamofire */; };
 		687D877E29533BCE000EC86F /* XYconvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D877D29533BCE000EC86F /* XYconvert.swift */; };
 		687D8783295350FE000EC86F /* WeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D8782295350FE000EC86F /* WeatherRequest.swift */; };
+		687D87862954C41C000EC86F /* TemperCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D87852954C41C000EC86F /* TemperCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		687D877829531954000EC86F /* Alamofire-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "Alamofire-master"; path = "../../../Downloads/Alamofire-master"; sourceTree = "<group>"; };
 		687D877D29533BCE000EC86F /* XYconvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYconvert.swift; sourceTree = "<group>"; };
 		687D8782295350FE000EC86F /* WeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRequest.swift; sourceTree = "<group>"; };
+		687D87852954C41C000EC86F /* TemperCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		687D875B2951B17F000EC86F /* 05API */ = {
 			isa = PBXGroup;
 			children = (
+				687D87842954C3EB000EC86F /* Cell */,
 				687D877F295350C0000EC86F /* API */,
 				687D875C2951B17F000EC86F /* AppDelegate.swift */,
 				687D875E2951B17F000EC86F /* SceneDelegate.swift */,
@@ -115,6 +118,14 @@
 				687D8772295304CA000EC86F /* WeatherResponse.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		687D87842954C3EB000EC86F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				687D87852954C41C000EC86F /* TemperCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +210,7 @@
 				687D875D2951B17F000EC86F /* AppDelegate.swift in Sources */,
 				687D8773295304CA000EC86F /* WeatherResponse.swift in Sources */,
 				687D877E29533BCE000EC86F /* XYconvert.swift in Sources */,
+				687D87862954C41C000EC86F /* TemperCollectionViewCell.swift in Sources */,
 				687D8783295350FE000EC86F /* WeatherRequest.swift in Sources */,
 				687D875F2951B17F000EC86F /* SceneDelegate.swift in Sources */,
 			);

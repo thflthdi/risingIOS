@@ -14,11 +14,14 @@ class WeatherRequest {
     // api 통신
     func getWeatherInfo(_ viewController: ViewController){
         let url = getUrl()
-        AF.request(url, method: .get)
+        AF.request(url,
+                   method: .get
+        )
             .responseDecodable(of: WeatherResponse.self){ response in
+                
                 switch response.result {
                 case .success(let response):
-                    print("DEBUG>> OpenWeather Response \(response) ")
+//                    print("DEBUG>> OpenWeather Response ")
                     viewController.didSuccess(response)
                     
                 case .failure(let error):
@@ -41,8 +44,6 @@ class WeatherRequest {
         //y - 위도
 //        let currentLatitude = Int(currentLocation.latitude)
         let currentLatitude = 126
-        
-        print(date, time, currentLogitude, currentLatitude, Constant().WEATHER_API_KEY)
         
         let url = "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?ServiceKey=\(Constant().WEATHER_API_KEY)&base_date=\(date)&base_time=\(time)&dataType=JSON&numOfRows=1000&nx=\(currentLogitude)&ny=\(currentLatitude)&pageNo=1"
         return url
