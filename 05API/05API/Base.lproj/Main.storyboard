@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_5API" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainVC" id="BYZ-38-t0r" customClass="ViewController" customModule="_5API" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -265,47 +265,70 @@
             </objects>
             <point key="canvasLocation" x="135.1145038167939" y="4.9295774647887329"/>
         </scene>
-        <!--View Controller-->
+        <!--Clothes View Controller-->
         <scene sceneID="SGp-7Z-lQh">
             <objects>
-                <viewController id="xXT-oG-WEm" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="clothesVC" id="xXT-oG-WEm" customClass="ClothesViewController" customModule="_5API" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fvK-Qf-0Tj">
-                        <rect key="frame" x="0.0" y="0.0" width="166.33333333333337" height="400.33333333333331"/>
+                        <rect key="frame" x="0.0" y="0.0" width="166" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CSb-UE-m6W">
-                                <rect key="frame" x="0.0" y="0.0" width="166" height="400"/>
+                                <rect key="frame" x="0.0" y="0.0" width="166.33333333333334" height="400.33333333333331"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="38" id="wvT-A8-K51">
-                                        <rect key="frame" x="0.0" y="50" width="166" height="38"/>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="clothesCell" rowHeight="38" id="wvT-A8-K51" customClass="ClothesTableViewCell" customModule="_5API" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="166.33333333333334" height="38"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wvT-A8-K51" id="zsC-XC-W8q">
-                                            <rect key="frame" x="0.0" y="0.0" width="166" height="38"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="166.33333333333334" height="38"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검은색 스타킹" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMK-1E-b2S">
-                                                    <rect key="frame" x="8" y="8.3333333333333339" width="150" height="21.666666666666664"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ij6-xl-JKq">
+                                                    <rect key="frame" x="10" y="10" width="146.33333333333334" height="18"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검은색 스타킹" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMK-1E-b2S">
+                                                            <rect key="frame" x="9.9999999999999929" y="10" width="126.33333333333331" height="0.0"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.2782395064" green="0.28334529539999997" blue="0.29325997710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="fMK-1E-b2S" secondAttribute="trailing" constant="10" id="BKV-bJ-eLE"/>
+                                                        <constraint firstItem="fMK-1E-b2S" firstAttribute="leading" secondItem="Ij6-xl-JKq" secondAttribute="leading" constant="10" id="CgY-dY-Q4H"/>
+                                                        <constraint firstAttribute="bottom" secondItem="fMK-1E-b2S" secondAttribute="bottom" constant="10" id="O4s-c7-7gP"/>
+                                                        <constraint firstItem="fMK-1E-b2S" firstAttribute="top" secondItem="Ij6-xl-JKq" secondAttribute="top" constant="10" id="dgv-iN-PZL"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.27823950638760853" green="0.28334529537112529" blue="0.29325997709023832" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="fMK-1E-b2S" secondAttribute="trailing" constant="8" id="UsK-hA-tNy"/>
-                                                <constraint firstItem="fMK-1E-b2S" firstAttribute="leading" secondItem="zsC-XC-W8q" secondAttribute="leading" constant="8" id="Yp4-ud-s0a"/>
-                                                <constraint firstItem="fMK-1E-b2S" firstAttribute="centerY" secondItem="zsC-XC-W8q" secondAttribute="centerY" id="bOT-Km-MDW"/>
-                                                <constraint firstItem="fMK-1E-b2S" firstAttribute="centerX" secondItem="zsC-XC-W8q" secondAttribute="centerX" id="xJc-5w-j5I"/>
+                                                <constraint firstItem="Ij6-xl-JKq" firstAttribute="leading" secondItem="zsC-XC-W8q" secondAttribute="leading" constant="10" id="QMV-mT-2TY"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ij6-xl-JKq" secondAttribute="trailing" constant="10" id="TaG-5S-arm"/>
+                                                <constraint firstItem="Ij6-xl-JKq" firstAttribute="top" secondItem="zsC-XC-W8q" secondAttribute="top" constant="10" id="ibb-Lb-SLM"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ij6-xl-JKq" secondAttribute="bottom" constant="10" id="oLU-K5-DMA"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="clothesNameLabel" destination="fMK-1E-b2S" id="fME-JT-fh0"/>
+                                            <outlet property="panelUIView" destination="Ij6-xl-JKq" id="WnK-fP-zyb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZHD-XQ-4og"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="CSb-UE-m6W" firstAttribute="leading" secondItem="fvK-Qf-0Tj" secondAttribute="leading" id="43K-xp-Ypx"/>
@@ -314,32 +337,35 @@
                             <constraint firstAttribute="bottom" secondItem="CSb-UE-m6W" secondAttribute="bottom" id="kXH-1T-87o"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="clothesTableView" destination="CSb-UE-m6W" id="mM4-Vl-aCH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxb-wb-nGi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="858" y="-143"/>
         </scene>
-        <!--View Controller-->
+        <!--Image View Controller-->
         <scene sceneID="K6e-I7-Iuy">
             <objects>
-                <viewController id="40W-3C-ovP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="imageCV" id="40W-3C-ovP" customClass="ImageViewController" customModule="_5API" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Kl-eo-NC2">
-                        <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="390.33333333333331"/>
+                        <rect key="frame" x="0.0" y="0.0" width="167" height="390"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RZB-oF-8qu">
-                                <rect key="frame" x="0.0" y="0.0" width="167" height="390"/>
+                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="390.33333333333331"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="E6w-Dh-g5a">
-                                        <rect key="frame" x="0.0" y="50" width="167" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" id="E6w-Dh-g5a" customClass="ImageTableViewCell" customModule="_5API" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="166.66666666666666" height="475.33334350585938"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E6w-Dh-g5a" id="lQg-Mp-8lj">
-                                            <rect key="frame" x="0.0" y="0.0" width="167" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="475.33334350585938"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jfh-Jm-1hX">
-                                                    <rect key="frame" x="0.0" y="0.0" width="167" height="43.666666666666664"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="four 1" translatesAutoresizingMaskIntoConstraints="NO" id="jfh-Jm-1hX">
+                                                    <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="475.33333333333331"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -354,6 +380,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="xyv-zF-SYo"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="RZB-oF-8qu" secondAttribute="trailing" id="3G8-9Q-A6C"/>
@@ -372,6 +399,7 @@
         <image name="arrow.left.arrow.right" catalog="system" width="120" height="128"/>
         <image name="cloud" width="1728" height="2592"/>
         <image name="cloud.snow.fill" catalog="system" width="122" height="128"/>
+        <image name="four 1" width="526" height="475"/>
         <image name="rain_icon" width="96" height="96"/>
     </resources>
 </document>

@@ -19,6 +19,12 @@
 		687D877E29533BCE000EC86F /* XYconvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D877D29533BCE000EC86F /* XYconvert.swift */; };
 		687D8783295350FE000EC86F /* WeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D8782295350FE000EC86F /* WeatherRequest.swift */; };
 		687D87862954C41C000EC86F /* TemperCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D87852954C41C000EC86F /* TemperCollectionViewCell.swift */; };
+		687D87892954FCF8000EC86F /* WeatherClothesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D87882954FCF7000EC86F /* WeatherClothesModel.swift */; };
+		687D878B295501E5000EC86F /* ClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D878A295501E5000EC86F /* ClothesViewController.swift */; };
+		687D878D29550223000EC86F /* ClothesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D878C29550223000EC86F /* ClothesTableViewCell.swift */; };
+		687D878F29550829000EC86F /* TempInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D878E29550829000EC86F /* TempInfoModel.swift */; };
+		687D87912955261D000EC86F /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D87902955261D000EC86F /* ImageTableViewCell.swift */; };
+		687D87932955262F000EC86F /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D87922955262F000EC86F /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,12 @@
 		687D877D29533BCE000EC86F /* XYconvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYconvert.swift; sourceTree = "<group>"; };
 		687D8782295350FE000EC86F /* WeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRequest.swift; sourceTree = "<group>"; };
 		687D87852954C41C000EC86F /* TemperCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperCollectionViewCell.swift; sourceTree = "<group>"; };
+		687D87882954FCF7000EC86F /* WeatherClothesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherClothesModel.swift; sourceTree = "<group>"; };
+		687D878A295501E5000EC86F /* ClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesViewController.swift; sourceTree = "<group>"; };
+		687D878C29550223000EC86F /* ClothesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesTableViewCell.swift; sourceTree = "<group>"; };
+		687D878E29550829000EC86F /* TempInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempInfoModel.swift; sourceTree = "<group>"; };
+		687D87902955261D000EC86F /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		687D87922955262F000EC86F /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +83,7 @@
 		687D875B2951B17F000EC86F /* 05API */ = {
 			isa = PBXGroup;
 			children = (
+				687D87872954FCD8000EC86F /* Model */,
 				687D87842954C3EB000EC86F /* Cell */,
 				687D877F295350C0000EC86F /* API */,
 				687D875C2951B17F000EC86F /* AppDelegate.swift */,
@@ -82,6 +95,8 @@
 				687D876A2951B181000EC86F /* Info.plist */,
 				687D877429530615000EC86F /* Constants.swift */,
 				687D877D29533BCE000EC86F /* XYconvert.swift */,
+				687D878A295501E5000EC86F /* ClothesViewController.swift */,
+				687D87922955262F000EC86F /* ImageViewController.swift */,
 			);
 			path = 05API;
 			sourceTree = "<group>";
@@ -124,8 +139,19 @@
 			isa = PBXGroup;
 			children = (
 				687D87852954C41C000EC86F /* TemperCollectionViewCell.swift */,
+				687D878C29550223000EC86F /* ClothesTableViewCell.swift */,
+				687D87902955261D000EC86F /* ImageTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		687D87872954FCD8000EC86F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				687D87882954FCF7000EC86F /* WeatherClothesModel.swift */,
+				687D878E29550829000EC86F /* TempInfoModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,12 +232,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				687D877529530615000EC86F /* Constants.swift in Sources */,
+				687D87892954FCF8000EC86F /* WeatherClothesModel.swift in Sources */,
 				687D87612951B17F000EC86F /* ViewController.swift in Sources */,
 				687D875D2951B17F000EC86F /* AppDelegate.swift in Sources */,
 				687D8773295304CA000EC86F /* WeatherResponse.swift in Sources */,
+				687D878B295501E5000EC86F /* ClothesViewController.swift in Sources */,
 				687D877E29533BCE000EC86F /* XYconvert.swift in Sources */,
 				687D87862954C41C000EC86F /* TemperCollectionViewCell.swift in Sources */,
+				687D87912955261D000EC86F /* ImageTableViewCell.swift in Sources */,
 				687D8783295350FE000EC86F /* WeatherRequest.swift in Sources */,
+				687D87932955262F000EC86F /* ImageViewController.swift in Sources */,
+				687D878F29550829000EC86F /* TempInfoModel.swift in Sources */,
+				687D878D29550223000EC86F /* ClothesTableViewCell.swift in Sources */,
 				687D875F2951B17F000EC86F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

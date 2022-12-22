@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "5361228_umbrella_autumn_cloud_fall_protection_icon.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -9,6 +9,7 @@ import UIKit
 import CoreLocation
 import Alamofire
 
+
 class ViewController: UIViewController {
     
     // Type: 앱에서 위치 관련 이벤트 전달을 시작/중지 하는데 사용하는 개체
@@ -116,7 +117,6 @@ extension ViewController: CLLocationManagerDelegate {
 // MARK: - API
 extension ViewController {
     func didSuccess(_ response: WeatherResponse) {
-        print(#function)
         let item = response.response.body.items.item
         for Item in item {
             switch Item.category {
@@ -133,10 +133,17 @@ extension ViewController {
             }
         }
         self.isGetData = true
+        TempInfoModel.hastempData = true
         self.temperSixTimeCollectionView.reloadData()
         
-        self.temperLabel.text = T1HList[0].fcstValue + " º"
+        self.temperLabel.text = T1HList[0].fcstValue + "º"
         setupIcon()
+        
+        let num = Int(T1HList[0].fcstValue) ?? 0
+        TempInfoModel.temp = num
+        
+        let CVC = children[0] as! ClothesViewController
+        CVC.reloadData()
     }
     
     func setupIcon(){

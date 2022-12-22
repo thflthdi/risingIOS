@@ -41,6 +41,6 @@ class TemperCollectionViewCell: UICollectionViewCell {
     public func setupTemper(_ cellData: Item){
         let endIndex = cellData.fcstTime.index(cellData.fcstTime.startIndex, offsetBy: 1)
         self.timeLabel.text = cellData.fcstTime[...endIndex] + "h"
-        self.temperLabel.text = cellData.fcstValue + " º"
+        self.temperLabel.text = cellData.fcstValue + "º"
     }
 }
