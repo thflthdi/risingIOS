@@ -40,6 +40,8 @@ extension ClothesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "clothesCell", for: indexPath) as! ClothesTableViewCell
         cell.setupUI(weatherClothesModel.read(indexPath.row, TempInfoModel.temp))
+        // 테스트 데이터
+//        cell.setupUI(weatherClothesModel.read(indexPath.row, -1))
         return cell
     }
     

@@ -57,9 +57,11 @@
 		687D887E295540C2000EC86F /* GeoGetAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D887D295540C2000EC86F /* GeoGetAddress.swift */; };
 		688DDDA52955B02600B419CA /* searchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688DDDA42955B02600B419CA /* searchResponse.swift */; };
 		688DDDA72955BBE800B419CA /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688DDDA62955BBE800B419CA /* MapTableViewCell.swift */; };
+		CECE7FE3E0E5B9D84A948C45 /* Pods_05API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 376DA720D76B26C49B3D6841 /* Pods_05API.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		376DA720D76B26C49B3D6841 /* Pods_05API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_05API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		687D87592951B17F000EC86F /* 05API.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 05API.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		687D875C2951B17F000EC86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		687D875E2951B17F000EC86F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,8 @@
 		687D887D295540C2000EC86F /* GeoGetAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoGetAddress.swift; sourceTree = "<group>"; };
 		688DDDA42955B02600B419CA /* searchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchResponse.swift; sourceTree = "<group>"; };
 		688DDDA62955BBE800B419CA /* MapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
+		79619B54400A09EEC5B3DEAB /* Pods-05API.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-05API.release.xcconfig"; path = "Target Support Files/Pods-05API/Pods-05API.release.xcconfig"; sourceTree = "<group>"; };
+		B8092CEF6741CAA04BBDF092 /* Pods-05API.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-05API.debug.xcconfig"; path = "Target Support Files/Pods-05API/Pods-05API.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,12 +141,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				687D877C29532149000EC86F /* Alamofire in Frameworks */,
+				CECE7FE3E0E5B9D84A948C45 /* Pods_05API.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B2BD6BE8CD02E5B5593EE8C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8092CEF6741CAA04BBDF092 /* Pods-05API.debug.xcconfig */,
+				79619B54400A09EEC5B3DEAB /* Pods-05API.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		687D87502951B17F000EC86F = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +164,7 @@
 				687D875B2951B17F000EC86F /* 05API */,
 				687D875A2951B17F000EC86F /* Products */,
 				687D88612955364B000EC86F /* Frameworks */,
+				1B2BD6BE8CD02E5B5593EE8C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -310,6 +325,7 @@
 				687D886629553660000EC86F /* CoreLocation.framework */,
 				687D886429553655000EC86F /* SystemConfiguration.framework */,
 				687D88622955364B000EC86F /* OpenGLES.framework */,
+				376DA720D76B26C49B3D6841 /* Pods_05API.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -321,9 +337,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 687D876D2951B181000EC86F /* Build configuration list for PBXNativeTarget "05API" */;
 			buildPhases = (
+				70DC592505B1E14301530CBE /* [CP] Check Pods Manifest.lock */,
 				687D87552951B17F000EC86F /* Sources */,
 				687D87572951B17F000EC86F /* Resources */,
 				687D87562951B17F000EC86F /* Frameworks */,
+				E844D4814080D273A6E4CE25 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -412,6 +430,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		70DC592505B1E14301530CBE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-05API-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E844D4814080D273A6E4CE25 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-05API/Pods-05API-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-05API/Pods-05API-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-05API/Pods-05API-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		687D87552951B17F000EC86F /* Sources */ = {
@@ -578,6 +638,7 @@
 		};
 		687D876E2951B181000EC86F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8092CEF6741CAA04BBDF092 /* Pods-05API.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -591,6 +652,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = 05API/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 서비스 이용";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -611,6 +673,7 @@
 		};
 		687D876F2951B181000EC86F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79619B54400A09EEC5B3DEAB /* Pods-05API.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -624,6 +687,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = 05API/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 서비스 이용";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

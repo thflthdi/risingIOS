@@ -25,6 +25,7 @@ class WeatherRequest {
                     viewController.didSuccess(response)
                     
                 case .failure(let error):
+                    print(response)
                     print("DEBUG>> OpenWeather Get Error : \(error.localizedDescription)")
                 }
             }

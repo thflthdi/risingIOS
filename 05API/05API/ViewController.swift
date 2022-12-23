@@ -8,8 +8,9 @@
 import UIKit
 import CoreLocation
 import Alamofire
-
-
+import KakaoSDKAuth
+import KakaoSDKCommon
+import KakaoSDKUser
 
 class ViewController: UIViewController {
     
@@ -37,6 +38,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var temperSixTimeCollectionView: UICollectionView!
     @IBOutlet weak var temperUIView: UIView!
     
+    @IBOutlet weak var kakaoLoginImage: UIImageView!
+    @IBOutlet weak var loginMsgLabel: UILabel!
+    
 // MARK: - 생명주기
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +55,12 @@ class ViewController: UIViewController {
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handelTap(sender:)))
         temperUIView.addGestureRecognizer(tapGesture)
+        
+        let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(handelTapKakao(sender:)))
+        kakaoLoginImage.addGestureRecognizer(tapGesture2)
+        kakaoLoginImage.isUserInteractionEnabled = true
+        
+        loginMsgLabel.isHidden = true
     }
     
     
@@ -62,6 +72,44 @@ class ViewController: UIViewController {
         mapVC.delegate = self
         self.navigationController?.pushViewController(mapVC, animated: true)
     }
+    
+    @objc func handelTapKakao(sender: UITapGestureRecognizer){
+        print(#function)
+        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("loginWithKakaoTalk() success.")
+
+                //do something
+                _ = oauthToken
+                let accessToken = oauthToken?.accessToken
+                self.setUserInfo()
+            }
+        }
+        
+    }
+    
+    func setUserInfo() {
+        //사용자 관리 api 호출
+        UserApi.shared.me() {(user, error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("me() success.")
+        //do something
+                _ = user
+                
+                print(user?.kakaoAccount?.profile?.nickname)
+                self.kakaoLoginImage.isHidden = true
+                self.loginMsgLabel.isHidden = false
+                self.loginMsgLabel.text = "반갑습니다. \(user?.kakaoAccount?.profile?.nickname ?? "")님"
+            }
+        }
+    }
+
     
     func radiusUIView() {
         self.hourtemperUIView.clipsToBounds = true
@@ -164,6 +212,7 @@ extension ViewController {
         self.temperSixTimeCollectionView.reloadData()
         
         self.temperLabel.text = T1HList[0].fcstValue + "º"
+//        self.temperLabel.text = "-1º"
         setupIcon()
         
         let num = Int(T1HList[0].fcstValue) ?? 0
@@ -202,16 +251,16 @@ extension ViewController {
         } else {
             switch PTYList[0].fcstValue {
             case "1":
-                image = UIImage(named: "cloud.rain")!
+                image = UIImage(systemName: "cloud.rain")!
                 backImage = UIImage(named: "rain")!
             case "2", "6":
-                image = UIImage(named: "cloud.sleet")!
+                image = UIImage(systemName: "cloud.sleet")!
                 backImage = UIImage(named: "snow")!
             case "3", "7":
-                image = UIImage(named: "snow_icon")!
+                image = UIImage(systemName: "cloud.snow.fill")!
                 backImage = UIImage(named: "snow")!
             default:
-                image = UIImage(named: "cloud.snow")!
+                image = UIImage(systemName: "cloud.snow.fill")!
                 backImage = UIImage(named: "snow")!
             }
         }

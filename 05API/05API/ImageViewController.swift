@@ -32,6 +32,9 @@ extension ImageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as! ImageTableViewCell
         cell.setupImage(weatherClothesModel.getImage(indexPath.row, TempInfoModel.temp))
+        
+        // 테스트 데이터
+//        cell.setupImage(weatherClothesModel.getImage(indexPath.row, -1))
         return cell
     }
     
