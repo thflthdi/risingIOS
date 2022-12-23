@@ -8,7 +8,9 @@
 import UIKit
 
 class ImageTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var clothesImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,4 +22,8 @@ class ImageTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    public func setupImage(_ cellData: ImageMapping){
+        self.clothesImage.image = cellData.image
+    }
+    
 }

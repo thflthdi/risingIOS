@@ -26,7 +26,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1x-33-Sny" userLabel="temperUIView">
                                 <rect key="frame" x="15" y="68.999999999999986" width="363" height="189.66666666666663"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="부평" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQI-Ln-qp4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인천" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQI-Ln-qp4">
                                         <rect key="frame" x="10" y="15" width="47" height="39"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="27"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -270,7 +270,7 @@
             <objects>
                 <viewController storyboardIdentifier="clothesVC" id="xXT-oG-WEm" customClass="ClothesViewController" customModule="_5API" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fvK-Qf-0Tj">
-                        <rect key="frame" x="0.0" y="0.0" width="166" height="400"/>
+                        <rect key="frame" x="0.0" y="0.0" width="166.33333333333337" height="400.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CSb-UE-m6W">
@@ -350,32 +350,35 @@
             <objects>
                 <viewController storyboardIdentifier="imageCV" id="40W-3C-ovP" customClass="ImageViewController" customModule="_5API" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Kl-eo-NC2">
-                        <rect key="frame" x="0.0" y="0.0" width="167" height="390"/>
+                        <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="390.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RZB-oF-8qu">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RZB-oF-8qu">
                                 <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="390.33333333333331"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" id="E6w-Dh-g5a" customClass="ImageTableViewCell" customModule="_5API" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="166.66666666666666" height="475.33334350585938"/>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="100" id="E6w-Dh-g5a" customClass="ImageTableViewCell" customModule="_5API" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="166.66666666666666" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E6w-Dh-g5a" id="lQg-Mp-8lj">
-                                            <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="475.33334350585938"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="four 1" translatesAutoresizingMaskIntoConstraints="NO" id="jfh-Jm-1hX">
-                                                    <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="475.33333333333331"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="four" translatesAutoresizingMaskIntoConstraints="NO" id="jfh-Jm-1hX">
+                                                    <rect key="frame" x="10" y="10" width="147" height="126"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="jfh-Jm-1hX" secondAttribute="bottom" id="WEf-yk-DRl"/>
-                                                <constraint firstItem="jfh-Jm-1hX" firstAttribute="top" secondItem="lQg-Mp-8lj" secondAttribute="top" id="b7E-US-VZR"/>
-                                                <constraint firstAttribute="trailing" secondItem="jfh-Jm-1hX" secondAttribute="trailing" id="k6t-Dz-DiI"/>
-                                                <constraint firstItem="jfh-Jm-1hX" firstAttribute="leading" secondItem="lQg-Mp-8lj" secondAttribute="leading" id="uYu-T4-zj5"/>
+                                                <constraint firstAttribute="bottom" secondItem="jfh-Jm-1hX" secondAttribute="bottom" constant="10" id="WEf-yk-DRl"/>
+                                                <constraint firstItem="jfh-Jm-1hX" firstAttribute="top" secondItem="lQg-Mp-8lj" secondAttribute="top" constant="10" id="b7E-US-VZR"/>
+                                                <constraint firstAttribute="trailing" secondItem="jfh-Jm-1hX" secondAttribute="trailing" constant="10" id="k6t-Dz-DiI"/>
+                                                <constraint firstItem="jfh-Jm-1hX" firstAttribute="leading" secondItem="lQg-Mp-8lj" secondAttribute="leading" constant="10" id="uYu-T4-zj5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="clothesImage" destination="jfh-Jm-1hX" id="F3U-QU-4YE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -389,17 +392,20 @@
                             <constraint firstItem="RZB-oF-8qu" firstAttribute="leading" secondItem="0Kl-eo-NC2" secondAttribute="leading" id="hXe-lf-tq9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageTableView" destination="RZB-oF-8qu" id="EgJ-jO-V8o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xyq-E9-8s6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-586" y="188"/>
+            <point key="canvasLocation" x="-587.02290076335873" y="187.67605633802819"/>
         </scene>
     </scenes>
     <resources>
         <image name="arrow.left.arrow.right" catalog="system" width="120" height="128"/>
         <image name="cloud" width="1728" height="2592"/>
         <image name="cloud.snow.fill" catalog="system" width="122" height="128"/>
-        <image name="four 1" width="526" height="475"/>
+        <image name="four" width="306" height="266"/>
         <image name="rain_icon" width="96" height="96"/>
     </resources>
 </document>

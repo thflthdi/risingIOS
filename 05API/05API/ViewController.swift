@@ -144,6 +144,9 @@ extension ViewController {
         
         let CVC = children[0] as! ClothesViewController
         CVC.reloadData()
+        
+        let imageVC = children.last as! ImageViewController
+        imageVC.reloadData()
     }
     
     func setupIcon(){
