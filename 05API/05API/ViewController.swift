@@ -10,6 +10,7 @@ import CoreLocation
 import Alamofire
 
 
+
 class ViewController: UIViewController {
     
     // Type: 앱에서 위치 관련 이벤트 전달을 시작/중지 하는데 사용하는 개체
@@ -34,12 +35,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var weatherIconImage: UIImageView!
     
     @IBOutlet weak var temperSixTimeCollectionView: UICollectionView!
+    @IBOutlet weak var temperUIView: UIView!
     
 // MARK: - 생명주기
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        GeoRequest().getAddress(self)
+        GeoRequest().getAddress(self, 126.731368000, 37.486935000)
         
         radiusUIView()
         checkLocationAuth()
@@ -47,10 +49,19 @@ class ViewController: UIViewController {
         self.temperSixTimeCollectionView.delegate = self
         self.temperSixTimeCollectionView.dataSource = self
 
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handelTap(sender:)))
+        temperUIView.addGestureRecognizer(tapGesture)
     }
     
     
 // MARK: - function
+    
+    @objc func handelTap(sender: UITapGestureRecognizer){
+        print(#function)
+        let mapVC = storyboard?.instantiateViewController(withIdentifier: "mapVC") as! MapViewController
+        mapVC.delegate = self
+        self.navigationController?.pushViewController(mapVC, animated: true)
+    }
     
     func radiusUIView() {
         self.hourtemperUIView.clipsToBounds = true
@@ -98,16 +109,24 @@ class ViewController: UIViewController {
             
         case .authorizedWhenInUse:
             currentLocation = locationManager!.location?.coordinate
-            WeatherRequest().getWeatherInfo(self)
-            print(currentLocation)
+            WeatherRequest().getWeatherInfo(self, 0, 0)
             
         default:
             print("default error")
         }
-}
+    }
 
 }
 
+extension ViewController: MapViewControllerDelegate {
+    func endSearch(_ x: String,_ y: String){
+        print("\(x)//------------------//\(y)")
+        let X = Double(x) ?? 0
+        let Y = Double(y) ?? 0
+        GeoRequest().getAddress(self, X, Y)
+        WeatherRequest().getWeatherInfo(self, Int(X), Int(Y))
+    }
+}
 
 // MARK: - LocationManager
 extension ViewController: CLLocationManagerDelegate {
@@ -120,6 +139,10 @@ extension ViewController: CLLocationManagerDelegate {
 // MARK: - API
 extension ViewController {
     func didSuccess(_ response: WeatherResponse) {
+        PTYList.removeAll()
+        WSDList.removeAll()
+        T1HList.removeAll()
+        SKYList.removeAll()
         let item = response.response.body.items.item
         for Item in item {
             switch Item.category {
@@ -135,6 +158,7 @@ extension ViewController {
                 continue
             }
         }
+        print(T1HList)
         self.isGetData = true
         TempInfoModel.hastempData = true
         self.temperSixTimeCollectionView.reloadData()
@@ -159,31 +183,41 @@ extension ViewController {
     
     func setupIcon(){
         var image: UIImage = UIImage(systemName: "cloud.snow.fill")!
+        var backImage: UIImage = UIImage(named: "cloud")!
         if PTYList[0].fcstValue == "0" {
             switch SKYList[0].fcstValue {
             case "1" :
                 image = UIImage(systemName: "sun.max.fill")!
+                backImage = UIImage(named: "sunny")!
             case "3" :
                 image = UIImage(systemName: "cloud.sun.fill")!
+                backImage = UIImage(named: "cloud")!
             case "4" :
                 image = UIImage(systemName: "cloud")!
+                backImage = UIImage(named: "cloud")!
             default:
                 image = UIImage(systemName: "cloud")!
+                backImage = UIImage(named: "cloud")!
             }
         } else {
             switch PTYList[0].fcstValue {
             case "1":
                 image = UIImage(named: "cloud.rain")!
+                backImage = UIImage(named: "rain")!
             case "2", "6":
                 image = UIImage(named: "cloud.sleet")!
+                backImage = UIImage(named: "snow")!
             case "3", "7":
                 image = UIImage(named: "snow_icon")!
+                backImage = UIImage(named: "snow")!
             default:
                 image = UIImage(named: "cloud.snow")!
+                backImage = UIImage(named: "snow")!
             }
         }
         
         self.weatherIconImage.image = image
+        self.backgroundImageView.image = backImage
     }
 }
 

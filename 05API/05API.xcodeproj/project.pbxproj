@@ -55,6 +55,8 @@
 		687D887129553704000EC86F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D887029553704000EC86F /* MapViewController.swift */; };
 		687D887C2955405E000EC86F /* GeoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D887B2955405E000EC86F /* GeoRequest.swift */; };
 		687D887E295540C2000EC86F /* GeoGetAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D887D295540C2000EC86F /* GeoGetAddress.swift */; };
+		688DDDA52955B02600B419CA /* searchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688DDDA42955B02600B419CA /* searchResponse.swift */; };
+		688DDDA72955BBE800B419CA /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688DDDA62955BBE800B419CA /* MapTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +127,8 @@
 		687D887029553704000EC86F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		687D887B2955405E000EC86F /* GeoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoRequest.swift; sourceTree = "<group>"; };
 		687D887D295540C2000EC86F /* GeoGetAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoGetAddress.swift; sourceTree = "<group>"; };
+		688DDDA42955B02600B419CA /* searchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchResponse.swift; sourceTree = "<group>"; };
+		688DDDA62955BBE800B419CA /* MapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +216,7 @@
 			children = (
 				687D8772295304CA000EC86F /* WeatherResponse.swift */,
 				687D887D295540C2000EC86F /* GeoGetAddress.swift */,
+				688DDDA42955B02600B419CA /* searchResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				687D87852954C41C000EC86F /* TemperCollectionViewCell.swift */,
 				687D878C29550223000EC86F /* ClothesTableViewCell.swift */,
 				687D87902955261D000EC86F /* ImageTableViewCell.swift */,
+				688DDDA62955BBE800B419CA /* MapTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -418,10 +424,12 @@
 				687D875D2951B17F000EC86F /* AppDelegate.swift in Sources */,
 				687D8773295304CA000EC86F /* WeatherResponse.swift in Sources */,
 				687D878B295501E5000EC86F /* ClothesViewController.swift in Sources */,
+				688DDDA72955BBE800B419CA /* MapTableViewCell.swift in Sources */,
 				687D877E29533BCE000EC86F /* XYconvert.swift in Sources */,
 				687D87862954C41C000EC86F /* TemperCollectionViewCell.swift in Sources */,
 				687D87912955261D000EC86F /* ImageTableViewCell.swift in Sources */,
 				687D887E295540C2000EC86F /* GeoGetAddress.swift in Sources */,
+				688DDDA52955B02600B419CA /* searchResponse.swift in Sources */,
 				687D8783295350FE000EC86F /* WeatherRequest.swift in Sources */,
 				687D87932955262F000EC86F /* ImageViewController.swift in Sources */,
 				687D878F29550829000EC86F /* TempInfoModel.swift in Sources */,

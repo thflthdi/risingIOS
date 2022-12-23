@@ -12,8 +12,8 @@ import UIKit
 class WeatherRequest {
     
     // api 통신
-    func getWeatherInfo(_ viewController: ViewController){
-        let url = getUrl()
+    func getWeatherInfo(_ viewController: ViewController,_ x: Int,_ y: Int){
+        let url = getUrl(x, y)
         AF.request(url,
                    method: .get
         )
@@ -30,7 +30,7 @@ class WeatherRequest {
             }
     }
     
-    func getUrl() -> String{
+    func getUrl(_ x: Int,_ y: Int) -> String{
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMdd"
         let date = formatter.string(from: Date())
@@ -40,10 +40,17 @@ class WeatherRequest {
         // FIXME: 시뮬은 위도 경도가 샌프란시스코로 나옴
         //x - 경도
 //        let currentLogitude = Int(currentLocation.longitude)
-        let currentLogitude = 37
+        var currentLogitude = 37
+        if x != 0 {
+            currentLogitude = y
+        }
+        
         //y - 위도
 //        let currentLatitude = Int(currentLocation.latitude)
-        let currentLatitude = 126
+        var currentLatitude = 126
+        if y != 0 {
+            currentLatitude = x
+        }
         
         let url = "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?ServiceKey=\(Constant().WEATHER_API_KEY)&base_date=\(date)&base_time=\(time)&dataType=JSON&numOfRows=1000&nx=\(currentLogitude)&ny=\(currentLatitude)&pageNo=1"
         return url
