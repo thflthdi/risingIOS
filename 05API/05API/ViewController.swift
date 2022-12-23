@@ -39,6 +39,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        GeoRequest().getAddress(self)
+        
         radiusUIView()
         checkLocationAuth()
         
@@ -97,6 +99,7 @@ class ViewController: UIViewController {
         case .authorizedWhenInUse:
             currentLocation = locationManager!.location?.coordinate
             WeatherRequest().getWeatherInfo(self)
+            print(currentLocation)
             
         default:
             print("default error")
@@ -147,6 +150,11 @@ extension ViewController {
         
         let imageVC = children.last as! ImageViewController
         imageVC.reloadData()
+    }
+    
+    func didGetAddressSuccess(_ response: GeoGetAddress) {
+        let result = response.response.result[0].structure.level2
+        self.temperCityLabel.text = result
     }
     
     func setupIcon(){

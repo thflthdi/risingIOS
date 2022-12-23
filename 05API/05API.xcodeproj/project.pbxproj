@@ -52,24 +52,10 @@
 		687D885929553535000EC86F /* map_present_background_update.png in Resources */ = {isa = PBXBuildFile; fileRef = 687D883D29553535000EC86F /* map_present_background_update.png */; };
 		687D885A29553535000EC86F /* daum_th_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 687D883E29553535000EC86F /* daum_th_line.png */; };
 		687D885B29553535000EC86F /* map_pin_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 687D883F29553535000EC86F /* map_pin_shadow.png */; };
-		687D885C29553535000EC86F /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 687D884029553535000EC86F /* DaumMap.framework */; };
-		687D885E295535C6000EC86F /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 687D884029553535000EC86F /* DaumMap.framework */; };
-		687D885F295535C6000EC86F /* DaumMap.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 687D884029553535000EC86F /* DaumMap.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		687D887129553704000EC86F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D887029553704000EC86F /* MapViewController.swift */; };
+		687D887C2955405E000EC86F /* GeoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D887B2955405E000EC86F /* GeoRequest.swift */; };
+		687D887E295540C2000EC86F /* GeoGetAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687D887D295540C2000EC86F /* GeoGetAddress.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		687D8860295535C6000EC86F /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				687D885F295535C6000EC86F /* DaumMap.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		687D87592951B17F000EC86F /* 05API.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 05API.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +115,16 @@
 		687D883E29553535000EC86F /* daum_th_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daum_th_line.png; sourceTree = "<group>"; };
 		687D883F29553535000EC86F /* map_pin_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_shadow.png; sourceTree = "<group>"; };
 		687D884029553535000EC86F /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
+		687D88622955364B000EC86F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		687D886429553655000EC86F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		687D886629553660000EC86F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		687D886829553669000EC86F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		687D886A29553675000EC86F /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		687D886C2955367E000EC86F /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		687D886E29553689000EC86F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		687D887029553704000EC86F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		687D887B2955405E000EC86F /* GeoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoRequest.swift; sourceTree = "<group>"; };
+		687D887D295540C2000EC86F /* GeoGetAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoGetAddress.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,8 +132,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				687D885C29553535000EC86F /* DaumMap.framework in Frameworks */,
-				687D885E295535C6000EC86F /* DaumMap.framework in Frameworks */,
 				687D877C29532149000EC86F /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +145,7 @@
 				687D87762953191B000EC86F /* Packages */,
 				687D875B2951B17F000EC86F /* 05API */,
 				687D875A2951B17F000EC86F /* Products */,
+				687D88612955364B000EC86F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,6 +175,7 @@
 				687D877D29533BCE000EC86F /* XYconvert.swift */,
 				687D878A295501E5000EC86F /* ClothesViewController.swift */,
 				687D87922955262F000EC86F /* ImageViewController.swift */,
+				687D887029553704000EC86F /* MapViewController.swift */,
 			);
 			path = 05API;
 			sourceTree = "<group>";
@@ -206,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				687D8782295350FE000EC86F /* WeatherRequest.swift */,
+				687D887B2955405E000EC86F /* GeoRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -214,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				687D8772295304CA000EC86F /* WeatherResponse.swift */,
+				687D887D295540C2000EC86F /* GeoGetAddress.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -296,6 +294,20 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
+		687D88612955364B000EC86F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				687D886E29553689000EC86F /* libsqlite3.tbd */,
+				687D886C2955367E000EC86F /* libxml2.tbd */,
+				687D886A29553675000EC86F /* libc++.tbd */,
+				687D886829553669000EC86F /* QuartzCore.framework */,
+				687D886629553660000EC86F /* CoreLocation.framework */,
+				687D886429553655000EC86F /* SystemConfiguration.framework */,
+				687D88622955364B000EC86F /* OpenGLES.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,9 +316,8 @@
 			buildConfigurationList = 687D876D2951B181000EC86F /* Build configuration list for PBXNativeTarget "05API" */;
 			buildPhases = (
 				687D87552951B17F000EC86F /* Sources */,
-				687D87562951B17F000EC86F /* Frameworks */,
 				687D87572951B17F000EC86F /* Resources */,
-				687D8860295535C6000EC86F /* Embed Frameworks */,
+				687D87562951B17F000EC86F /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -410,11 +421,14 @@
 				687D877E29533BCE000EC86F /* XYconvert.swift in Sources */,
 				687D87862954C41C000EC86F /* TemperCollectionViewCell.swift in Sources */,
 				687D87912955261D000EC86F /* ImageTableViewCell.swift in Sources */,
+				687D887E295540C2000EC86F /* GeoGetAddress.swift in Sources */,
 				687D8783295350FE000EC86F /* WeatherRequest.swift in Sources */,
 				687D87932955262F000EC86F /* ImageViewController.swift in Sources */,
 				687D878F29550829000EC86F /* TempInfoModel.swift in Sources */,
 				687D878D29550223000EC86F /* ClothesTableViewCell.swift in Sources */,
+				687D887129553704000EC86F /* MapViewController.swift in Sources */,
 				687D875F2951B17F000EC86F /* SceneDelegate.swift in Sources */,
+				687D887C2955405E000EC86F /* GeoRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
